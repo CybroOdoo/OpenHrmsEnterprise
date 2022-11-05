@@ -8,8 +8,9 @@
     'company': 'Cybrosys Techno Solutions',
     'depends': ['base', 'hr', 'hr_payroll', 'hr_contract'],
     'application': True,
+    'images': ['static/description/banner.png'],
     'data': [
-       'data/data_payroll.xml',
+        'data/data_payroll.xml',
     ],
     'license': 'OPL-1',
 }
