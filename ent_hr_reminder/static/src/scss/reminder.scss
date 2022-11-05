@@ -1,0 +1,58 @@
+.o_main_navbar .dropdown-menu, .o_main_navbar .o_menu_sections .dropdown-menu, .o_main_navbar .o_menu_systray .dropdown-menu {
+    margin-top: 0;
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.dropbtn_c {
+  color: white;
+  background-color: inherit !important;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown_c {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.dropdown-content_c {
+  display: none !important;
+  position: absolute !important;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top:40px
+
+}
+
+.dropdown-content_c a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block !important;
+}
+
+.dropdown-content_c a:hover {background-color: #ddd;}
+
+.dropdown_c:hover .dropdown-content_c {display: block !important;}
+
+.dropdown-options:hover{
+    background-color: #f1f1f1 !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.dropdown-options{
+
+}
+.reminders-dropdown-container {
+    max-height : 70px;
+    overflow-y: scroll;
+    padding: 0px !important;
+    margin: 0px !important;
+}

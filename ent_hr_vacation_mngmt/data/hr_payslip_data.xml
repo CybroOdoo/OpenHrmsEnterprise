@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+<!--        <record id="hr_leave_salary_register" model="hr.contribution.register">-->
+<!--            <field name="name">Leave Salary</field>-->
+<!--            <field name="partner_id" eval="False"/>-->
+<!--        </record>-->
+        <!-- Salary Rules -->
+         <!-- Contribution Register -->
+        <record id="hr_leave_salary_register" model="res.partner">
+            <field name="name">Leave Salary</field>
+        </record>
+
+<!--         <record id="structure_002" model="hr.payroll.structure">-->
+<!--            <field name="name">Regular Pay</field>-->
+<!--            <field name="type_id" ref="hr_contract.structure_type_employee"/>-->
+<!--            <field name="unpaid_work_entry_type_ids" eval="[(4, ref('hr_work_entry_contract.work_entry_type_unpaid_leave'))]"/>-->
+<!--            <field name="country_id" eval="False"/>-->
+<!--        </record>-->
+
+        <record id="hr_salary_rule_leave_salary_basic" model="hr.salary.rule">
+            <field name="name">Leave Salary Basic</field>
+            <field name="code">LSB</field>
+            <field name="sequence" eval="90"/>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="partner_id" ref="hr_leave_salary_register"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.BASIC</field>
+            <field name="struct_id" ref="ent_hr_payroll_extension.structure_002"/>
+        </record>
+
+        <record id="hr_salary_rule_leave_salary_gross" model="hr.salary.rule">
+            <field name="name">Leave Salary Gross</field>
+            <field name="code">LSG</field>
+            <field name="sequence" eval="90"/>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="partner_id" ref="hr_leave_salary_register"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = categories.BASIC + categories.ALW</field>
+             <field name="struct_id" ref="ent_hr_payroll_extension.structure_002"/>
+        </record>
+    </data>
+</odoo>
