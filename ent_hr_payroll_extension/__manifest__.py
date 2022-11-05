@@ -11,5 +11,5 @@
     'data': [
        'data/data_payroll.xml',
     ],
-    'license': "AGPL-3",
+    'license': 'OPL-1',
 }
