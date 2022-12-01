@@ -1,0 +1,206 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ent_hr_holidays_approval
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-09 11:06+0000\n"
+"PO-Revision-Date: 2022-08-09 11:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.ui.menu,name:ent_hr_holidays_approval.menu_open_leave_approvals
+msgid "Approval Requests"
+msgstr "طلبات الموافقة"
+
+#. module: ent_hr_holidays_approval
+#: code:addons/custom_addons/ent_hr_holidays_approval/models/leave_request.py:0
+#: code:addons/ent_hr_holidays_approval/models/leave_request.py:0
+#: model:ir.actions.server,name:ent_hr_holidays_approval.open_holidays_to_approve
+#, python-format
+msgid "Approvals"
+msgstr "الموافقات"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__validation_status
+msgid "Approve Status"
+msgstr "حالة الموافقة"
+
+#. module: ent_hr_holidays_approval
+#: code:addons/custom_addons/ent_hr_holidays_approval/models/leave_request.py:0
+#: code:addons/ent_hr_holidays_approval/models/leave_request.py:0
+#, python-format
+msgid ""
+"Changing leave validators is not permitted. You can only change it from "
+"Leave Types Configuration"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__leave_comments
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_leave_validation_status__leave_comments
+msgid "Comments"
+msgstr "تعليقات"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__create_uid
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__create_date
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__display_name
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__holiday_status
+msgid "Holiday Status"
+msgstr "حالة العطلة"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__hr_holiday_status
+msgid "Hr Holiday Status"
+msgstr "حالة عطلة الموارد البشرية"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__id
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_hr_leave__multi_level_validation
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_hr_leave_type__multi_level_validation
+msgid "If checked then multi-level approval is necessary"
+msgstr "إذا تم التحديد ، فمن الضروري الموافقة متعددة المستويات"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators____last_update
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__write_uid
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__write_date
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave_type__leave_validation_type
+msgid "Leave Validation"
+msgstr "تصديق الإجازة "
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_holidays_validators__holiday_validators
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave__leave_approvals
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave_type__leave_validators
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_leave_validation_status__validating_users
+msgid "Leave Validators"
+msgstr "اترك المدققين"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_hr_leave__leave_approvals
+msgid "Leave approvals"
+msgstr "موافقات الإجازة"
+
+#. module: ent_hr_holidays_approval
+#: code:addons/custom_addons/ent_hr_holidays_approval/models/leave_request.py:0
+#: code:addons/ent_hr_holidays_approval/models/leave_request.py:0
+#, python-format
+msgid "Leave request must be confirmed (\"To Approve\") in order to approve it."
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: code:addons/custom_addons/ent_hr_holidays_approval/models/leave_request.py:0
+#: code:addons/custom_addons/ent_hr_holidays_approval/models/leave_request.py:0
+#: code:addons/ent_hr_holidays_approval/models/leave_request.py:0
+#: code:addons/ent_hr_holidays_approval/models/leave_request.py:0
+#, python-format
+msgid "Leave request must be confirmed or validated in order to refuse it."
+msgstr "يجب تأكيد طلب الإجازة أو التحقق من صحته من أجل رفضه."
+
+#. module: ent_hr_holidays_approval
+#: model_terms:ir.ui.view,arch_db:ent_hr_holidays_approval.hr_holidays_status_double_validation
+msgid "Leave validation"
+msgstr "إجازة التحقق"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_hr_holidays_validators__holiday_validators
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_hr_leave_type__leave_validators
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_leave_validation_status__validating_users
+msgid "Leave validators"
+msgstr "اترك المدققين"
+
+#. module: ent_hr_holidays_approval
+#: model_terms:ir.ui.view,arch_db:ent_hr_holidays_approval.hr_holidays_status_validators_users
+msgid "Mode"
+msgstr "الوضع"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields.selection,name:ent_hr_holidays_approval.selection__hr_leave_type__leave_validation_type__multi
+msgid "Multi Level Approval"
+msgstr "موافقة متعددة المستويات"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave__button_visibility
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave__multi_level_validation
+#: model:ir.model.fields,field_description:ent_hr_holidays_approval.field_hr_leave_type__multi_level_validation
+msgid "Multiple Level Approval"
+msgstr "موافقة متعددة المستويات"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model.fields,help:ent_hr_holidays_approval.field_leave_validation_status__validation_status
+msgid "Status"
+msgstr "حالة"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model,name:ent_hr_holidays_approval.model_hr_leave
+msgid "Time Off"
+msgstr "الإجازات "
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model,name:ent_hr_holidays_approval.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "نوع الإجازة "
+
+#. module: ent_hr_holidays_approval
+#: model_terms:ir.ui.view,arch_db:ent_hr_holidays_approval.hr_holidays_status_double_validation
+#: model_terms:ir.ui.view,arch_db:ent_hr_holidays_approval.hr_holidays_status_validators_leave_create
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: ent_hr_holidays_approval
+#: model_terms:ir.ui.view,arch_db:ent_hr_holidays_approval.hr_holidays_status_validators_leave_create
+msgid "Validation Status"
+msgstr "حالة التحقق من الصحة"
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model,name:ent_hr_holidays_approval.model_hr_holidays_validators
+msgid "hr.holidays.validators"
+msgstr ""
+
+#. module: ent_hr_holidays_approval
+#: model:ir.model,name:ent_hr_holidays_approval.model_leave_validation_status
+msgid "leave.validation.status"
+msgstr ""
