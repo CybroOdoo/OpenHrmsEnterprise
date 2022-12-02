@@ -27,7 +27,7 @@
     'description' : 'To manage employee transfer between branches',
     'live_test_url': 'https://www.youtube.com/watch?v=gwZ0JpGn-Lw&feature=youtu.be',
     'category': 'Generic Modules/Human Resources',
-    'author': 'Cybrosys Techno solutions,Open HRMS',
+    'author': 'Cybrosys Techno Solutions,Open HRMS',
     'maintainer': 'Cybrosys Techno Solutions',
     'company': 'Cybrosys Techno Solutions',
     'website': 'https://www.openhrms.com',

@@ -25,7 +25,7 @@
     'summary': """History Of Employees In Your Company""",
     'description': 'Track the History of Employees in your Company',
     'category': 'Generic Modules/Human Resources',
-    'author': 'Cybrosys Techno solutions,Open HRMS',
+    'author': 'Cybrosys Techno Solutions,Open HRMS',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",

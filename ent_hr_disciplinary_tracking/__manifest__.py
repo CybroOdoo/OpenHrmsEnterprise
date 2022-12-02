@@ -26,7 +26,7 @@
     'summary': """Employee Disciplinary Tracking Management""",
     'description': 'To manage employee disciplinary tracking',
     'live_test_url': 'https://youtu.be/LFuw2iY4Deg',
-    'author': 'Cybrosys Techno solutions, Open HRMS',
+    'author': 'Cybrosys Techno Solutions, Open HRMS',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'category': 'Generic Modules/Human Resources',

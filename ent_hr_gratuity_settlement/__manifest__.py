@@ -25,7 +25,7 @@
     'summary': """Employee Gratuity Settlement""",
     'description' : 'To manage gratuity settlement for employees',
     'live_test_url': """https://youtu.be/NITjRN6a6Jc""",
-    'author': 'Cybrosys Techno solutions,Open HRMS',
+    'author': 'Cybrosys Techno Solutions,Open HRMS',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'category': 'Generic Modules/Human Resources',

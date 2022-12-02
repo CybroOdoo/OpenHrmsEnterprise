@@ -25,7 +25,7 @@
     'category': 'Generic Modules/Human Resources',
     'summary': 'HR Reminder For OHRMS',
     'description' : 'To manage reminder',
-    'author': 'Cybrosys Techno solutions,Open HRMS',
+    'author': 'Cybrosys Techno Solutions,Open HRMS',
     'company': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",
     'maintainer': 'Cybrosys Techno Solutions',

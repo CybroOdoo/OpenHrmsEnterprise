@@ -25,7 +25,7 @@
     'summary': """Enables Multi-Company""",
     'description': 'This module enables multi company features',
     'category': 'Generic Modules/Human Resources',
-    'author': 'Cybrosys Techno solutions,Open HRMS',
+    'author': 'Cybrosys Techno Solutions,Open HRMS',
     'company': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",
     'maintainer': 'Cybrosys Techno Solutions',

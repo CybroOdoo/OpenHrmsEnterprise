@@ -25,7 +25,7 @@
     'summary': """Vacation Management,manages employee vacation""",
     'description': """HR Vacation management""",
     'live_test_url': 'https://youtu.be/Pf7zf-PkdfA',
-    'author': 'Cybrosys Techno solutions,Open HRMS',
+    'author': 'Cybrosys Techno Solutions,Open HRMS',
     'company': 'Cybrosys Techno Solutions',
     'website': 'https://www.openhrms.com',
     'category': 'Generic Modules/Human Resources',

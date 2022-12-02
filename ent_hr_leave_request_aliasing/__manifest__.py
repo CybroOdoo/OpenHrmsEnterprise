@@ -26,7 +26,7 @@
     'description': 'This module allows you to create leave request directly from incoming mails.',
     'live_test_url': 'https://youtu.be/jQFAP20k_Wc',
     'category': 'Generic Modules/Human Resources',
-    'author': 'Cybrosys Techno solutions,Open HRMS',
+    'author': 'Cybrosys Techno Solutions,Open HRMS',
     'company': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",
     'maintainer': 'Cybrosys Techno Solutions',
