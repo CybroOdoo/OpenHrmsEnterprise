@@ -25,7 +25,7 @@
     'summary': """GOSI Contribution for Saudi Government""",
     'description': """GOSI Contribution for Saudi Government From Employee and Company""",
     'category': 'Human Resource',
-    'author': 'Cybrosys Techno solutions,Open HRMS',
+    'author': "Cybrosys Techno Solutions,Open HRMS",
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",

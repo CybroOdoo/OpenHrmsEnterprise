@@ -27,7 +27,7 @@
     'live_test_url': 'https://youtu.be/Fv2yGCNQJIA',
     'category': 'Generic Modules/Human Resources',
     'description': 'Manage the employees background verification Process employee verification ',
-    'author': 'Cybrosys Techno solutions, Open HRMS',
+    'author': 'Cybrosys Techno Solutions, Open HRMS',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",
