@@ -29,7 +29,7 @@
     'company': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",
     'maintainer': 'Cybrosys Techno Solutions',
-    'depends': ['base', 'hr','hr_contract', 'hr_payroll', 'hr_expense', 'hr_attendance'],
+    'depends': ['base', 'hr','hr_contract', 'hr_payroll', 'hr_expense', 'hr_attendance','hr_holidays'],
     'data': [
         'views/hr_company_view.xml',
         'views/multi_company_view.xml',
