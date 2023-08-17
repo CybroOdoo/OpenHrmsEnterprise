@@ -75,12 +75,13 @@ class HrResignation(models.Model):
     def set_join_date(self):
         self.joined_date = self.employee_id.joining_date
 
-    @api.model
-    def create(self, vals):
-        # assigning the sequence for the record
-        if vals.get('name', _('New')) == _('New'):
-            vals['name'] = self.env['ir.sequence'].next_by_code('hr.resignation') or _('New')
-        res = super(HrResignation, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            # assigning the sequence for the record
+            if vals.get('name', _('New')) == _('New'):
+                vals['name'] = self.env['ir.sequence'].next_by_code('hr.resignation') or _('New')
+        res = super(HrResignation, self).create(vals_list)
         return res
 
     @api.constrains('employee_id')

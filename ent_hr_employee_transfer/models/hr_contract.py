@@ -29,7 +29,7 @@ class HrContract(models.Model):
                                    string='Transferred Employee',
                                    help="Transferred employee")
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         res = super(HrContract, self).create(vals)
         if res.emp_transfer:

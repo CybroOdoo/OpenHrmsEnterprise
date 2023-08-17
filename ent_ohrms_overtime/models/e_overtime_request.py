@@ -230,11 +230,12 @@ class HrOverTime(models.Model):
                 raise ValidationError(_(
                     'You can not have 2 Overtime requests that overlaps on same day!'))
 
-    @api.model
-    def create(self, values):
-        seq = self.env['ir.sequence'].next_by_code('hr.overtime') or '/'
-        values['name'] = seq
-        return super(HrOverTime, self.sudo()).create(values)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            seq = self.env['ir.sequence'].next_by_code('hr.overtime') or '/'
+            vals['name'] = seq
+        return super(HrOverTime, self.sudo()).create(vals_list)
 
     def unlink(self):
         for overtime in self.filtered(

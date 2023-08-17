@@ -73,13 +73,14 @@ class HrAnnouncementTable(models.Model):
         if self.date_start > self.date_end:
             raise ValidationError("Start date must be less than End Date")
 
-    @api.model
-    def create(self, vals):
-        if vals.get('is_announcement'):
-            vals['name'] = self.env['ir.sequence'].next_by_code('hr.announcement.general')
-        else:
-            vals['name'] = self.env['ir.sequence'].next_by_code('hr.announcement')
-        return super(HrAnnouncementTable, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get('is_announcement'):
+                vals['name'] = self.env['ir.sequence'].next_by_code('hr.announcement.general')
+            else:
+                vals['name'] = self.env['ir.sequence'].next_by_code('hr.announcement')
+        return super(HrAnnouncementTable, self).create(vals_list)
 
     def get_expiry_state(self):
         """

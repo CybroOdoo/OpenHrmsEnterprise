@@ -72,10 +72,11 @@ class HrSchedule(models.Model):
             }
         }
 
-    @api.model
-    def create(self, vals):
-        self._check_overlap(vals)
-        return super(HrSchedule, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            self._check_overlap(vals)
+        return super(HrSchedule, self).create(vals_list)
 
     def write(self, vals):
         self._check_overlap(vals)

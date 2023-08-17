@@ -130,9 +130,10 @@ class EmployeeTransfer(models.Model):
     def cancel_transfer(self):
         self.state = 'cancel'
 
-    @api.model
-    def create(self, vals):
-        vals['name'] = "Transfer: " + self.env['hr.employee'].browse(
-            vals['employee_id']).name
-        res = super(EmployeeTransfer, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            vals['name'] = "Transfer: " + self.env['hr.employee'].browse(
+                vals['employee_id']).name
+        res = super(EmployeeTransfer, self).create(vals_list)
         return res

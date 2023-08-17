@@ -59,10 +59,11 @@ class Service(models.Model):
     name = fields.Char(string='Reference', required=True, copy=False, readonly=True,
                        default=lambda self: _('New'))
 
-    @api.model
-    def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('service.request')
-        return super(Service, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].next_by_code('service.request')
+        return super(Service, self).create(vals_list)
 
     @api.depends('read_only')
     def get_user(self):
@@ -99,7 +100,7 @@ class Service(models.Model):
         }
         approve = self.env['service.execute'].sudo().create(vals)
         return
-    
+
     def service_approval(self):
         for record in self:
             record.tester.sudo().state_execute = 'approved'
@@ -107,7 +108,7 @@ class Service(models.Model):
                 'state': 'approved'
             })
         return
-    
+
     def service_rejection(self):
         self.write({
             'state': 'reject'

@@ -30,7 +30,7 @@ class ResUsersInherit(models.Model):
                                   ondelete='restrict', auto_join=True,
                                   help='Employee-related data of the user')
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         """This code is to create an employee while creating an user."""
 
