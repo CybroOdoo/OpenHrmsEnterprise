@@ -183,7 +183,7 @@ class HrCustody(models.Model):
                                         copy=False, readonly=1,
                                         help="Renew rejected reason")
     date_request = fields.Date(string='Requested Date', required=True,
-                               track_visibility='always', readonly=True,
+                               tracking=True, readonly=True,
                                help="Requested date",
                                states={'draft': [('readonly', False)]},
                                default=datetime.now().strftime('%Y-%m-%d'))
@@ -192,7 +192,7 @@ class HrCustody(models.Model):
                                default=lambda self: self.env.user.
                                employee_id.id,
                                states={'draft': [('readonly', False)]})
-    purpose = fields.Char(string='Reason', track_visibility='always',
+    purpose = fields.Char(string='Reason', tracking=True,
                           required=True, readonly=True, help="Reason",
                           states={'draft': [('readonly', False)]})
     custody_name = fields.Many2one('custody.property', string='Property',
@@ -202,11 +202,11 @@ class HrCustody(models.Model):
                                    )
     location = fields.Char(string="Location", read_only=True)
     return_date = fields.Date(string='Return Date', required=True,
-                              track_visibility='always', readonly=True,
+                              tracking=True, readonly=True,
                               help="Return date",
                               states={'draft': [('readonly', False)]})
     renew_date = fields.Date(string='Renewal Return Date',
-                             track_visibility='always',
+                             tracking=True,
                              help="Return date for the renewal", readonly=True,
                              copy=False)
     notes = fields.Html(string='Notes')
@@ -217,7 +217,7 @@ class HrCustody(models.Model):
          ('approved', 'Approved'),
          ('returned', 'Returned'), ('rejected', 'Refused')], string='Status',
         default='draft',
-        track_visibility='always')
+        tracking=True)
     mail_send = fields.Boolean(string="Mail Send")
     property_type = fields.Boolean(string="type")
 
