@@ -31,7 +31,7 @@ RESIGNATION_TYPE = [('resigned', 'Normal Resignation'),
 
 class HrResignation(models.Model):
     _name = 'hr.resignation'
-    _inherit = 'mail.thread'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = 'employee_id'
 
     name = fields.Char(string='Order Reference', required=True, copy=False, readonly=True, index=True,

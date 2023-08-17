@@ -33,6 +33,7 @@ class HrEmployeeFamilyInfo(models.Model):
 
     _name = 'hr.employee.family'
     _description = 'HR Employee Family'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     employee_id = fields.Many2one('hr.employee', string="Employee",
                                   help='Select corresponding Employee',
