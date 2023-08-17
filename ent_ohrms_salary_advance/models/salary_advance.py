@@ -93,10 +93,11 @@ class SalaryAdvancePayment(models.Model):
     def reject(self):
         self.state = 'reject'
 
-    @api.model
-    def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].get('salary.advance.seq') or ' '
-        res_id = super(SalaryAdvancePayment, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].get('salary.advance.seq') or ' '
+        res_id = super(SalaryAdvancePayment, self).create(vals_list)
         return res_id
 
     def approve_request(self):
