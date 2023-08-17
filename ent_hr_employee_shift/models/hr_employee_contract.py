@@ -26,6 +26,9 @@ from odoo.exceptions import UserError
 class HrEmployeeContract(models.Model):
     _inherit = 'hr.contract'
 
+    def _get_default_department_ids(self):
+        return self.env['hr.department'].search([(1, '=', 1)], limit=1)
+
     shift_schedule = fields.One2many('hr.shift.schedule', 'rel_hr_schedule',
                                      string="Shift Schedule",
                                      help="Shift schedule")
@@ -35,7 +38,8 @@ class HrEmployeeContract(models.Model):
     department_id = fields.Many2one('hr.department',
                                     string="Department",
                                     help="Department",
-                                    required=True)
+                                    required=True,
+                                    default=_get_default_department_ids)
 
 
 class HrSchedule(models.Model):

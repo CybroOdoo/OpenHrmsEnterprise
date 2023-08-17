@@ -47,9 +47,12 @@ class HrEmployeeShift(models.Model):
                     'hour_from': 8, 'hour_to': 12}),
         ]
 
+    def _get_default_department_ids(self):
+        return self.env['hr.department'].search([(1, '=', 1)], limit=1)
+
     color = fields.Integer(string='Color Index', help="Color")
     hr_department = fields.Many2one('hr.department', string="Department",
-                                    required=True, help="Department")
+                                    required=True, help="Department", default=_get_default_department_ids)
     sequence = fields.Integer(string="Sequence", required=True, default=1,
                               help="Sequence")
     attendance_ids = fields.One2many(
