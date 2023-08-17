@@ -37,13 +37,13 @@ class Saudi(models.Model):
     nationality = fields.Char(string='Nationality', required=True,
                               help="Nationality")
     type_gosi = fields.Char(string='Type', required=True,
-                            track_visibility='onchange', help="Gosi Type")
+                            tracking=True, help="Gosi Type")
     dob = fields.Char(string='Date Of Birth', required=True,
                       help="Date Of Birth")
     gos_numb = fields.Char(string='GOSI Number', required=True,
-                           track_visibility='onchange', help="Gosi number")
+                           tracking=True, help="Gosi number")
     issued_dat = fields.Char(string='Issued Date', required=True,
-                             track_visibility='onchange', help="Issued date")
+                             tracking=True, help="Issued date")
     name = fields.Char(string='Reference', required=True, copy=False,
                        readonly=True,
                        default=lambda self: _('New'))
