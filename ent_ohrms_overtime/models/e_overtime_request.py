@@ -57,7 +57,7 @@ class HrOverTime(models.Model):
                                  related="employee_id.parent_id.user_id", store=True)
     current_user = fields.Many2one('res.users', string="Current User",
                                    related='employee_id.user_id',
-                                   default=lambda self: self.env.uid,
+                                   # default=lambda self: self.env.uid,
                                    store=True)
     current_user_boolean = fields.Boolean()
     project_id = fields.Many2one('project.project', string="Project")
