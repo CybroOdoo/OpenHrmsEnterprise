@@ -82,7 +82,7 @@ class HrLoan(models.Model):
         ('approve', 'Approved'),
         ('refuse', 'Refused'),
         ('cancel', 'Canceled'),
-    ], string="State", default='draft', tracking=True, copy=False, )
+    ], ondelete={'draft': 'set default'} )
 
     @api.model_create_multi
     def create(self, vals_list):
