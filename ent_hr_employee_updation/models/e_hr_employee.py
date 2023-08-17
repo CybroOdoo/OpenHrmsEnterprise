@@ -93,21 +93,21 @@ class HrEmployee(models.Model):
         help="Employee joining date computed from the contract start date",
         compute='_compute_joining_date', store=True)
     id_expiry_date = fields.Date(
-        string='Expiry Date',
+        string='ID Expiry Date',
         help='Expiry date of Identification ID')
     passport_expiry_date = fields.Date(
-        string='Expiry Date',
+        string='Passport Expiry Date',
         help='Expiry date of Passport ID')
     id_attachment_id = fields.Many2many(
         'ir.attachment', 'id_attachment_rel',
         'id_ref', 'attach_ref',
-        string="Attachment",
+        string="ID Attachment",
         help='You can attach the copy of your Id')
     passport_attachment_id = fields.Many2many(
         'ir.attachment',
         'passport_attachment_rel',
         'passport_ref', 'attach_ref1',
-        string="Attachment",
+        string="Passport Attachment",
         help='You can attach the copy of Passport')
     fam_ids = fields.One2many(
         'hr.employee.family', 'employee_id',
