@@ -59,7 +59,7 @@ class HrResignation(models.Model):
     resignation_type = fields.Selection(selection=RESIGNATION_TYPE, help="Select the type of resignation: normal "
                                                                          "resignation or fired by the company")
     read_only = fields.Boolean(string="check field")
-    employee_contract = fields.Char(String="Contract")
+    employee_contract = fields.Char(string="Contract")
 
     @api.onchange('employee_id')
     @api.depends('employee_id')
