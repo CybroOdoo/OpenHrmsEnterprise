@@ -23,9 +23,8 @@
     'name': 'Enterprise Open HRMS Loan Management',
     'version': '16.0.1.0.0',
     'summary': 'Manage Loan Requests',
-    'description': """
-        Helps you to manage Loan Requests of your company's staff.
-        """,
+    'description': """Helps you to manage Loan Requests of your company's 
+     staff.""",
     'category': 'Generic Modules/Human Resources',
     'author': "Cybrosys Techno Solutions,Open HRMS",
     'company': 'Cybrosys Techno Solutions',
