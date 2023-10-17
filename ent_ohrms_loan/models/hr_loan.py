@@ -107,20 +107,6 @@ class HrLoan(models.Model):
         ('cancel', 'Canceled'),
     ], string="State", default='draft', tracking=True, copy=False,  )
 
-<<<<<<< HEAD
-    @api.model_create_multi
-    def create(self, vals_list):
-        for values in vals_list:
-            loan_count = self.env['hr.loan'].search_count(
-                [('employee_id', '=', values['employee_id']), ('state', '=', 'approve'),
-                ('balance_amount', '!=', 0)])
-            if loan_count:
-                raise ValidationError(_("The employee has already a pending installment"))
-            else:
-                values['name'] = self.env['ir.sequence'].get('hr.loan.seq') or ' '
-                res = super(HrLoan, self).create(values)
-                return res
-=======
     @api.model
     def create(self, values):
         """creates a new HR loan record with the provided values."""
@@ -135,7 +121,6 @@ class HrLoan(models.Model):
             values['name'] = self.env['ir.sequence'].get('hr.loan.seq') or ' '
             res = super(HrLoan, self).create(values)
             return res
->>>>>>> upstream/16.0
 
     def compute_installment(self):
         """This automatically create the installment the employee need to pay
