@@ -31,6 +31,7 @@ RESIGNATION_TYPE = [('resigned', 'Normal Resignation'),
 
 class HrResignation(models.Model):
     _name = 'hr.resignation'
+    _description = "Employee resignation process"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = 'employee_id'
 

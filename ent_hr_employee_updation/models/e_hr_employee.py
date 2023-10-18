@@ -134,6 +134,7 @@ class EmployeeRelationInfo(models.Model):
     """Table for keep employee family information"""
 
     _name = 'hr.employee.relation'
+    _description = "Employee family relations"
 
     name = fields.Char(string="Relationship",
                        help="Relationship with thw employee")

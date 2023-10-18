@@ -43,7 +43,7 @@ class EmployeeBroadFactor(models.Model):
             create or replace view hr_employee_broad_factor as (
                 select
                     e.id,
-                    e.name, 
+                    e.name,
                     count(h.*) as no_of_occurrence,
                     sum(h.number_of_days) as no_of_days,
                     count(h.*)*count(h.*)*sum(h.number_of_days) as broad_factor
@@ -56,6 +56,7 @@ class EmployeeBroadFactor(models.Model):
 
 class ReportOverdue(models.AbstractModel):
     _name = 'report.ent_hrms_dashboard.report_broadfactor'
+    _description = 'Report of HRMS Dashboard'
 
     @api.model
     def get_report_values(self, docids=None, data=None):
