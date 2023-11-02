@@ -39,7 +39,7 @@ class SalaryRuleInputInherit(models.Model):
 
     @api.onchange('struct_id', 'date_from', 'date_to', 'employee_id')
     def onchange_employee_salary(self):
-        res = super(SalaryRuleInputInherit, self).onchange_employee_loan()
+        # res = super(SalaryRuleInputInherit, self).onchange_employee_loan()
         salary_line = self.struct_id.rule_ids.filtered(
                         lambda x: x.code == 'SAR')
         if salary_line:
@@ -55,4 +55,4 @@ class SalaryRuleInputInherit(models.Model):
                     code = salary_line.code
                     if code not in self.input_line_ids.mapped('input_type_id').mapped('code'):
                         self.input_data_salary_line(name, amount)
-        return res
+        return
