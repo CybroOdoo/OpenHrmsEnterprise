@@ -200,7 +200,7 @@ class HrCustody(models.Model):
                                    help="Property name",
                                    states={'draft': [('readonly', False)]}
                                    )
-    location = fields.Char(string="Location", read_only=True)
+    location = fields.Char(string="Location", readonly=True)
     return_date = fields.Date(string='Return Date', required=True,
                               tracking=True, readonly=True,
                               help="Return date",
