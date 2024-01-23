@@ -29,10 +29,11 @@ class HrLawsuit(models.Model):
     _description = 'Hr Lawsuit Management'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
-    @api.model
-    def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('hr.lawsuit')
-        return super(HrLawsuit, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].next_by_code('hr.lawsuit')
+        return super(HrLawsuit, self).create(vals_list)
 
     def won(self):
         self.state = 'won'
@@ -121,4 +122,3 @@ class HrLegalEmployeeMaster(models.Model):
                 'type': 'ir.actions.act_window',
                 'name': _('Legal Actions'),
             }
-

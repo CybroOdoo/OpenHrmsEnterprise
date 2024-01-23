@@ -101,10 +101,11 @@ class HrCustody(models.Model):
                         mail_id.mail_message_id.write({'partner_ids': [
                             (4, i.employee.user_id.partner_id.id)]})
 
-    @api.model
-    def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('hr.custody')
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].next_by_code('hr.custody')
+        return super().create(vals_list)
 
     def sent(self):
         self.state = 'to_approve'
