@@ -88,10 +88,11 @@ class DisciplinaryAction(models.Model):
     joined_date = fields.Date(string="Joined Date", help="Employee joining date")
 
     # assigning the sequence for the record
-    @api.model
-    def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('disciplinary.action')
-        return super(DisciplinaryAction, self).create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            vals['name'] = self.env['ir.sequence'].next_by_code('disciplinary.action')
+        return super(DisciplinaryAction, self).create(vals_list)
 
     # Check the user is a manager or employee
     @api.depends('read_only')
