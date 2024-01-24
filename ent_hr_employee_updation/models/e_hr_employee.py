@@ -113,6 +113,11 @@ class HrEmployee(models.Model):
         'hr.employee.family', 'employee_id',
         string='Family', help='Family Information')
 
+    dependents = fields.Integer(
+        string="Number of dependents",
+        readonly=True,
+        required=False, compute='_compute_dependent')
+
     @api.depends('contract_id')
     def _compute_joining_date(self):
         for rec in self:
@@ -128,6 +133,12 @@ class HrEmployee(models.Model):
                 'relation_id': relation.id,
                 'birth_date': self.spouse_birthdate,
             })]
+
+
+    @api.depends('fam_ids')
+    def _compute_dependent(self):
+        for employee in self:
+            employee.dependents = employee.relative_ids.env['hr.employee.family'].search_count([('employee_id', '=', employee.id)])
 
 
 class EmployeeRelationInfo(models.Model):
