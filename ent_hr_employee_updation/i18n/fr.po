@@ -1,0 +1,427 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ent_hr_employee_updation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-24 11:52+0000\n"
+"PO-Revision-Date: 2024-01-24 17:18+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: ent_hr_employee_updation
+#: model_terms:ir.ui.view,arch_db:ent_hr_employee_updation.hr_contract_notice_period
+msgid "<span> days</span>"
+msgstr "<span> jours</span>"
+
+#. module: ent_hr_employee_updation
+#: model_terms:ir.ui.view,arch_db:ent_hr_employee_updation.journal_config_settings_view_form
+msgid "<span>days</span>"
+msgstr "<span>jours</span>"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_needaction
+msgid "Action Needed"
+msgstr "Action requise"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__activity_ids
+msgid "Activities"
+msgstr "Activités"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activité Exception Décoration"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__activity_state
+msgid "Activity State"
+msgstr "État d'activités"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icône du type d'activité"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model,name:ent_hr_employee_updation.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de configuration"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__member_contact
+msgid "Contact No"
+msgstr "Nr de contact"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__create_uid
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_relation__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__create_date
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_relation__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__birth_date
+msgid "DOB"
+msgstr "Date de naissance"
+
+#. module: ent_hr_employee_updation
+#: model_terms:ir.ui.view,arch_db:ent_hr_employee_updation.hr_employee_inherit_form_view
+msgid "Dependence Details"
+msgstr "Détails des dépendants"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__display_name
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_relation__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model,name:ent_hr_employee_updation.model_hr_employee
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model,name:ent_hr_employee_updation.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrat de l'employé"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model,name:ent_hr_employee_updation.model_hr_employee_relation
+msgid "Employee family relations"
+msgstr "Relation"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__joining_date
+msgid "Employee joining date computed from the contract start date"
+msgstr "Date d'engagement calculée"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__id_expiry_date
+msgid "Expiry date of Identification ID"
+msgstr "Expiration de la pièce d'identité"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__passport_expiry_date
+msgid "Expiry date of Passport ID"
+msgstr "Expiration du passeport"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__fam_ids
+msgid "Family"
+msgstr "Famille"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__fam_ids
+msgid "Family Information"
+msgstr "Information de famille"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_follower_ids
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnés (Partenaires)"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: ent_hr_employee_updation
+#: model:ir.actions.server,name:ent_hr_employee_updation.employee_data_reminder_ir_actions_server
+#: model:ir.cron,cron_name:ent_hr_employee_updation.employee_data_reminder
+msgid "HR Employee Data Expiration"
+msgstr "Expiration des données d'employés"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model,name:ent_hr_employee_updation.model_hr_employee_family
+msgid "HR Employee Family"
+msgstr "Famille des employés"
+
+#. module: ent_hr_employee_updation
+#: model:ir.ui.menu,name:ent_hr_employee_updation.menu_hr_management
+msgid "HR Management"
+msgstr "GRH"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__has_message
+msgid "Has Message"
+msgstr "A un message"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__id
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_relation__id
+msgid "ID"
+msgstr "Pièce d'identité"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__id_attachment_id
+msgid "ID Attachment"
+msgstr "Pièce d'identité jointe"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__id_expiry_date
+msgid "ID Expiry Date"
+msgstr "Expiration de la pièce d'identité"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__activity_exception_icon
+msgid "Icon"
+msgstr "Icône"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icône pour indiquer une exception d'activité."
+
+#. module: ent_hr_employee_updation
+#: model_terms:ir.ui.view,arch_db:ent_hr_employee_updation.hr_employee_inherit_form_view
+msgid "Identification ID"
+msgstr "Pièce d'identité"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si cette case est cochée, de nouveaux messages nécessitent votre attention."
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__message_has_error
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si cette case est cochée, certains messages présentent une erreur de livraison."
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_is_follower
+msgid "Is Follower"
+msgstr "Est abonné"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__joining_date
+msgid "Joining Date"
+msgstr "Date d'engagement"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family____last_update
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_relation____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__write_uid
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_relation__write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__write_date
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_relation__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Pièce jointe principale"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur de livraison de message"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__personal_mobile
+msgid "Mobile"
+msgstr "Mobile"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Échéance de mon activité"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__member_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Prochain événement d'activité de calendrier"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Échéance de la prochaine activité"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__activity_summary
+msgid "Next Activity Summary"
+msgstr "Résumé de la prochaine activité"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type de la prochaine activité"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_res_config_settings__no_of_days
+msgid "No Of Days"
+msgstr "Nbre de jours"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_contract__notice_days
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_res_config_settings__notice_period
+msgid "Notice Period"
+msgstr "Période d'essai"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__dependents
+msgid "Number of dependents"
+msgstr "Nombre de dépendants"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Nombre de messages nécessitant une action"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec erreur de livraison"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__passport_attachment_id
+msgid "Passport Attachment"
+msgstr "Passeport joint"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee__passport_expiry_date
+msgid "Passport Expiry Date"
+msgstr "Expiration du passeport"
+
+#. module: ent_hr_employee_updation
+#: model_terms:ir.ui.view,arch_db:ent_hr_employee_updation.hr_employee_inherit_form_view
+msgid "Passport ID"
+msgstr "Nr Passeport"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__personal_mobile
+msgid "Personal mobile number of the employee"
+msgstr "Téléphone mobile de l'employé"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__relation_id
+msgid "Relation"
+msgstr "Relation"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_relation__name
+msgid "Relationship"
+msgstr "Relation"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__relation_id
+msgid "Relationship with the employee"
+msgstr "Relation à l'employé"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_relation__name
+msgid "Relationship with thw employee"
+msgstr "Relation à l'employé"
+
+#. module: ent_hr_employee_updation
+#: model:ir.ui.menu,name:ent_hr_employee_updation.employee_report_menu
+msgid "Reports"
+msgstr "Rapports"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__activity_user_id
+msgid "Responsible User"
+msgstr "Utilisateur responsable"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erreur de livraison de SMS"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__employee_id
+msgid "Select corresponding Employee"
+msgstr "Sélectionnez l'employé correspondant"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard : la date d'échéance est déjà dépassée\n"
+"Aujourd'hui : la date d'activité est aujourd'hui\n"
+"Planifié : Activités futures."
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type d'exception sur activité d'enregistrement."
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,field_description:ent_hr_employee_updation.field_hr_employee_family__website_message_ids
+msgid "Website Messages"
+msgstr "Messages de site Web"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee_family__website_message_ids
+msgid "Website communication history"
+msgstr "Historique de communication du site web"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__passport_attachment_id
+msgid "You can attach the copy of Passport"
+msgstr "Vous pouvez joindre la copie de votre passeport"
+
+#. module: ent_hr_employee_updation
+#: model:ir.model.fields,help:ent_hr_employee_updation.field_hr_employee__id_attachment_id
+msgid "You can attach the copy of your Id"
+msgstr "Vous pouvez joindre la copie de votre pièce d'identité"
