@@ -138,7 +138,7 @@ class HrEmployee(models.Model):
     @api.depends('fam_ids')
     def _compute_dependent(self):
         for employee in self:
-            employee.dependents = employee.relative_ids.env['hr.employee.family'].search_count([('employee_id', '=', employee.id)])
+            employee.dependents = employee.fam_ids.env['hr.employee.family'].search_count([('employee_id', '=', employee.id)])
 
 
 class EmployeeRelationInfo(models.Model):
