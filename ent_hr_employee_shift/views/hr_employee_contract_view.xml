@@ -11,8 +11,8 @@
                     <field name="resource_calendar_id" invisible="1"/>
                 </xpath>
                 <page name="part_time" position="after">
-                    <page name="shift_schedule" string="Shift Schedule">
-                        <field name="shift_schedule" nolabel="1" groups="hr.group_hr_manager">
+                    <page name="shift_schedule" string="Shift Schedule"  groups="hr.group_hr_manager">
+                        <field name="shift_schedule" nolabel="1">
                             <tree editable="1">
                                 <field name="start_date"/>
                                 <field name="end_date"/>
