@@ -12,7 +12,7 @@
                 </xpath>
                 <page name="part_time" position="after">
                     <page name="shift_schedule" string="Shift Schedule">
-                        <field name="shift_schedule" nolabel="1">
+                        <field name="shift_schedule" nolabel="1" groups="hr.group_hr_manager">
                             <tree editable="1">
                                 <field name="start_date"/>
                                 <field name="end_date"/>
