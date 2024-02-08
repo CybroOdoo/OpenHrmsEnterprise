@@ -50,7 +50,8 @@ class HrAttendance(models.Model):
 class ZkMachine(models.Model):
     _name = 'zk.machine'
 
-    name = fields.Char(string='Machine IP', required=True)
+    name = fields.Char(string='Name', required=True)
+    address_ip = fields.Char(string='Machine IP', required=True)
     port_no = fields.Integer(string='Port No', required=True)
     address_id = fields.Many2one('res.partner', string='Working Address')
     company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.user.company_id.id)
@@ -65,7 +66,7 @@ class ZkMachine(models.Model):
     def clear_attendance(self):
         for info in self:
             try:
-                machine_ip = info.name
+                machine_ip = info.address_ip
                 zk_port = info.port_no
                 timeout = 30
                 try:
@@ -121,7 +122,7 @@ class ZkMachine(models.Model):
         zk_attendance = self.env['zk.machine.attendance']
         att_obj = self.env['hr.attendance']
         for info in self:
-            machine_ip = info.name
+            machine_ip = info.address_ip
             zk_port = info.port_no
             timeout = 15
             try:

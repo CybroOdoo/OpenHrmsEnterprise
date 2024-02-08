@@ -15,11 +15,12 @@
                     <div class="oe_title">
                         <label for="name" />
                         <h1>
-                            <field name="name" placeholder="Machine IP"/>
+                            <field name="name" placeholder="Description"/>
                         </h1>
                     </div>
                     <group>
                         <group>
+                            <field name="address_ip"/>
                             <field name="port_no"/>
                             <field name="address_id"/>
                         </group>
@@ -38,6 +39,7 @@
         <field name="arch" type="xml">
             <tree string="Biometric Machine">
                 <field name="name"/>
+                <field name="address_ip"/>
                 <field name="port_no"/>
                 <field name="address_id"/>
                 <field name="company_id" groups="base.group_multi_company"/>
