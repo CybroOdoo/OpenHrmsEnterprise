@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    Inheriting hr salary rule form view-->
+    <record id="hr_salary_rule_form" model="ir.ui.view">
+        <field name="name">hr.salary.rule.form.inherit.ent.ohrms.loan</field>
+        <field name="model">hr.salary.rule</field>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="company_id" options="{'no_create': True}"
+                       groups="base.group_multi_company" invisible="1"/>
+            </field>
+        </field>
+    </record>
+</odoo>
