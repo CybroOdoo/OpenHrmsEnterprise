@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="name">view.employee.form.inherit.ent.hr.employee.updation</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='personal_information']/group"
+                   position="after">
+                <group name="identification_id" string="Identification ID">
+                    <field name="identification_id"/>
+                    <field name="joining_date" readonly="0"/>
+                    <field name="id_expiry_date" groups="hr.group_hr_user"
+                           invisible="identification_id in ('None','False')"/>
+                    <field name="id_attachment_ids" groups="hr.group_hr_user"
+                           widget="many2many_binary" class="oe_inline"
+                           invisible="identification_id in ('None','False')"/>
+                </group>
+                <group name="passport_id" string="Passport ID">
+                    <field name="passport_id"/>
+                    <field name="passport_expiry_date" groups="hr.group_hr_user"
+                           invisible="passport_id in ('None','False')"/>
+                    <field name="passport_attachment_ids"
+                           groups="hr.group_hr_user" widget="many2many_binary"
+                           class="oe_inline"
+                           invisible="passport_id in ('None','False')"/>
+                </group>
+                <group name="fam_ids" colspan="4" string="Dependence Details">
+                    <field name="fam_ids">
+                        <tree editable="bottom">
+                            <field name="member_name" required="1"/>
+                            <field name="relation_id" required="1"/>
+                            <field name="member_contact"/>
+                            <field name="birth_date"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <menuitem id="employee_report_menu"
+              name="Reports"
+              sequence="30"
+              groups="hr.group_hr_manager,hr.group_hr_user"/>
+    <menuitem id="hr_management_menu"
+              name="HR Management"
+              parent="hr.menu_hr_root"
+              sequence="5"
+              groups="hr.group_hr_manager,hr.group_hr_user"/>
+</odoo>
