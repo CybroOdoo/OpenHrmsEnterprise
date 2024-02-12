@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    Demo data for hr employee document-->
+    <data noupdate="1">
+        <record id="hr_employee_document_record" model="hr.employee.document">
+            <field name="name">DC01</field>
+            <field name="employee_ref_id" ref="hr_employee_record"/>
+        </record>
+    </data>
+</odoo>

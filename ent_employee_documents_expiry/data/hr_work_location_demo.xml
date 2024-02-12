@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    Demo data for hr work location-->
+    <data noupdate="1">
+        <record id="hr_work_location_record" model="hr.work.location">
+            <field name="name">Building 3, Third Floor</field>
+            <field name="address_id" ref="base.main_partner"/>
+        </record>
+    </data>
+</odoo>

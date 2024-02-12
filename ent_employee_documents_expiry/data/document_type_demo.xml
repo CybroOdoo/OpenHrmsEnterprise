@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    Demo data for document type-->
+    <data noupdate="1">
+        <record id="document_type_record_01" model="document.type">
+            <field name="name">Driving License</field>
+        </record>
+        <record id="document_type_record_02" model="document.type">
+            <field name="name">Passport</field>
+        </record>
+        <record id="document_type_record_03" model="document.type">
+            <field name="name">ID Card</field>
+        </record>
+    </data>
+</odoo>
