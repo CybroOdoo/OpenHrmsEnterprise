@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        Creating dashboard menu-->
+        <record id="hr_action_dashboard" model="ir.actions.client">
+            <field name="name">Dashboard</field>
+            <field name="tag">hr_dashboard</field>
+        </record>
+        <menuitem id="hr_dashboard_menu" name="HR Dashboard"
+                  action="hr_action_dashboard"
+                  web_icon="ent_hrms_dashboard,static/description/icon.png"
+                  sequence="-100" groups="base.group_user"/>
+    </data>
+</odoo>
