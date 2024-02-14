@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<!-- Customize Attendance Report -->
-    <record id="inherited_view_attendance_tree" model="ir.ui.view">
-        <field name="name">inherited_hr.attendance.tree</field>
-        <field name="model">hr.attendance</field>
-        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
-        <field name="arch" type="xml">
-            <tree string="Employee attendances">
-                <field name="worked_hours" type="measure"/>
-            </tree>
-        </field>
-    </record>
+    #TODO Fix this view
+<!--    <record id="inherited_view_attendance_tree" model="ir.ui.view">-->
+<!--        <field name="name">inherited_hr.attendance.tree</field>-->
+<!--        <field name="model">hr.attendance</field>-->
+<!--        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Employee attendances">-->
+<!--                <field name="worked_hours" type="measure"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
 
-    <record id="inherited_hr_attendance_view_filter" model="ir.ui.view">
-        <field name="name">inherited_hr_attendance_view_filter</field>
-        <field name="model">hr.attendance</field>
-        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
-        <field name="arch" type="xml">
-            <search string="Hr Attendance Search">
-                <group expand="0" string="Group By">
-                    <separator/>
-                	<filter name="date" string="Date" context="{'group_by':'check_in:day'}"/>
-                    
-                </group>
-            </search>
-        </field>
-    </record>
+<!--    <record id="inherited_hr_attendance_view_filter" model="ir.ui.view">-->
+<!--        <field name="name">inherited_hr_attendance_view_filter</field>-->
+<!--        <field name="model">hr.attendance</field>-->
+<!--        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <search string="Hr Attendance Search">-->
+<!--                <group expand="0" string="Group By">-->
+<!--                    <separator/>-->
+<!--                	<filter name="date" string="Date" context="{'group_by':'check_in:day'}"/>-->
+<!--                    -->
+<!--                </group>-->
+<!--            </search>-->
+<!--        </field>-->
+<!--    </record>-->
         	
     <record id="view_zk_report_daily_attendance_search" model="ir.ui.view">
         <field name="name">zk.report.daily.attendance.search</field>
