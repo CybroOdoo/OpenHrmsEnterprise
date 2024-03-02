@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    Tree view for Salary history-->
+        <record id="salary_history_view_tree" model="ir.ui.view">
+            <field name="name">salary.history.view.tree</field>
+            <field name="model">salary.history</field>
+            <field name="arch" type="xml">
+                <tree string="salary_history" create="0" import="false">
+                    <field name="employee_id" column_invisible="True"/>
+                    <field name ="employee_name" column_invisible="True"/>
+                    <field name="updated_date"/>
+                    <field name="current_value"/>
+                </tree>
+            </field>
+        </record>
+</odoo>
