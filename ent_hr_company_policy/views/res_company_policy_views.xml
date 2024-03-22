@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    res.company.policy view-->
+    <record id="res_company_policy_view_form" model="ir.ui.view">
+        <field name="name">res.company.policy.view.form</field>
+        <field name="model">res.company.policy</field>
+        <field name="arch" type="xml">
+            <form edit="0" create="0" delete="0">
+                <field name="com_id" groups="base.group_multi_company"
+                       invisible="1"/>
+                <field name="policy_info" widget="html"/>
+                <footer>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

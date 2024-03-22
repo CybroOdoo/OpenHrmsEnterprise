@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Inherits the Dashboard View for Adding the Policy Details-->
+<templates id="template" xml:space="preserve">
+    <t t-inherit="ent_hrms_dashboard.LoginEmployeeDetails" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('employee-mobile')]" position="after">
+            <div class="col-md-2 col-sm-2">
+                <button type="button" class="btn btn-third oe_company_policy" id="company_policy" t-on-click="company_policy">
+                    Company Policy
+                </button>
+            </div>
+        </xpath>
+    </t>
+</templates>

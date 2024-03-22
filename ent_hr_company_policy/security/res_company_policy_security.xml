@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<odoo>
+<!--    Multi Company rule for the Policy-->
+    <record id="company_rule_policy" model="ir.rule">
+        <field name="name">Company Policy Multi Company</field>
+        <field name="model_id" ref="model_res_company_policy"/>
+        <field eval="True" name="global"/>
+        <field name="domain_force">
+            ['|',('com_id','=',False),('com_id','child_of',[user.company_id.id])]
+        </field>
+    </record>
+</odoo>
