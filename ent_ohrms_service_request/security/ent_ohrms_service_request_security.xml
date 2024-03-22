@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--    Service Request Own Document Only Rule-->
+    <record id="request_visibility" model="ir.rule">
+        <field name="name">Request Visibility</field>
+        <field ref="model_service_request" name="model_id"/>
+        <field name="domain_force">[('employee_id.id','=',user.partner_id.id)]
+        </field>
+        <field name="groups" eval="[(4, ref('project.group_project_user'))]"/>
+    </record>
+
+<!--    Service Request Administrator Rule-->
+    <record id="admin_visibility" model="ir.rule">
+        <field name="name">Administrator Visibility</field>
+        <field ref="model_service_request" name="model_id"/>
+        <field name="domain_force">[]</field>
+        <field name="groups" eval="[(4, ref('hr.group_hr_manager'))]"/>
+    </record>
+
+    <!--    Demo Data for ir_module_category-->
+    <record id="module_service_execution" model="ir.module.category">
+        <field name="name">Service</field>
+        <field name="sequence">5</field>
+    </record>
+
+<!--    New User Group for service_execution-->
+    <record id="service_group_executer" model="res.groups">
+        <field name="name">Service Executer</field>
+        <field name="category_id" ref="module_service_execution"/>
+        <field name="users"
+               eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+</odoo>

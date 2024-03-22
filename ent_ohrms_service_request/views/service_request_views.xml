@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--        service_request tree view-->
+    <record id="service_request_view_tree" model="ir.ui.view">
+        <field name="name">service.request.view.tree</field>
+        <field name="model">service.request</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <tree string="Service Request">
+                <field name="service_name"/>
+                <field name="employee_id"/>
+                <field name="service_date"/>
+                <field name="service_type"/>
+                <field name="service_product_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--        service_request form view-->
+    <record id="service_request_view_form" model="ir.ui.view">
+        <field name="name">service.request.view.form</field>
+        <field name="model">service.request</field>
+        <field name="arch" type="xml">
+            <form string="Service Request">
+                <header>
+                    <button name="action_submit_reg" string="Submit"
+                            type="object" class="btn-primary"
+                            invisible="state not in 'draft'"/>
+                    <button name="action_service_approval" type="object"
+                            string="Approve" class="oe_highlight"
+                            groups="hr_attendance.group_hr_attendance_own_reader"
+                            invisible="state not in ('check')"/>
+                    <button name="action_assign_executer" type="object"
+                            string="Assign" class="oe_highlight"
+                            groups="hr_attendance.group_hr_attendance_manager"
+                            invisible="state not in 'requested'"/>
+                    <button name="action_service_rejection" type="object"
+                            string="Reject" class="oe_highlight"
+                            groups="hr_attendance.group_hr_attendance_own_reader"
+                            invisible="state not in ('check')"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,requested,approved"/>
+                </header>
+                <sheet>
+                    <group col="4" colspan="4">
+                        <field name="service_name"
+                               placeholder="Title For Service"/>
+                        <field name="employee_id"/>
+                        <field name="service_type"/>
+                        <field name="service_product_id"/>
+                        <field name="service_date"/>
+                        <field name="service_executer_id"
+                               readonly="read_only == False"/>
+                        <field name="read_only" invisible="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Internal Notes">
+                            <field name="internal_note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"
+                           groups="base.group_user"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--        service_request action-->
+    <record id="service_request_action" model="ir.actions.act_window">
+        <field name="name">Service Request</field>
+        <field name="res_model">service.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_no_content_create">Create new Request
+            </p>
+        </field>
+    </record>
+
+    <!--        service_request_approved action -->
+    <record id="service_request_approved_action" model="ir.actions.act_window">
+        <field name="name">Service Approval</field>
+        <field name="res_model">service.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[['state', '=','requested']]</field>
+        <field name="help" type="html">
+            <p class="oe_view_no_content_create">Create new record
+            </p>
+        </field>
+    </record>
+
+    <!--        service_request menu items-->
+    <menuitem id="service_root" name="Services" parent="hr.menu_hr_root"/>
+    <menuitem id="service_requests" name="Request Service"
+              parent="service_root"
+              action="service_request_action" groups="base.group_user"
+              sequence="1"/>
+    <menuitem id="service_approve" name="Service Approval"
+              parent="service_root"
+              action="service_request_approved_action"
+              groups="hr_attendance.group_hr_attendance_manager" sequence="2"/>
+
+    <!--        Report pivot view-->
+    <record id="service_request_view_pivot" model="ir.ui.view">
+        <field name="name">pivot</field>
+        <field name="model">service.request</field>
+        <field name="type">pivot</field>
+        <field name="arch" type="xml">
+            <pivot string="Pivot View">
+                <field name="service_product_id" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!--         Report pivot view action-->
+    <record id="service_request_pivot_action" model="ir.actions.act_window">
+        <field name="name">View Pivot</field>
+        <field name="res_model">service.request</field>
+        <field name="view_mode">pivot</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Enter the target
+            </p>
+        </field>
+    </record>
+
+    <!--         Report menu items-->
+    <menuitem id="service_report" name="Reporting" parent="service_root"
+              groups="project.group_project_manager"/>
+    <menuitem id="service_pivot" name="Service Reporting"
+              parent="service_report"
+              action="service_request_pivot_action"
+              groups="project.group_project_manager"/>
+
+</odoo>
