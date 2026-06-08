@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Form view for the model contract.renewal-->
+    <record id='contract_renewal_view_form' model='ir.ui.view'>
+        <field name="name">contract.renewal.view.form</field>
+        <field name="model">contract.renewal</field>
+        <field name="arch" type="xml">
+            <form string="Renewal Request">
+                <group>
+                    <group>
+                        <field name="returned_date"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="proceed" string="Proceed" type="object"
+                            class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <!--Windows action for the model contract.renewal-->
+    <record model='ir.actions.act_window' id='contract_renewal_action'>
+        <field name="name">Custody Request</field>
+        <field name="res_model">contract.renewal</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="contract_renewal_view_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

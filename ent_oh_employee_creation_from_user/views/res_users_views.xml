@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--        Inherit res users form view-->
+    <record id="view_users_form" model="ir.ui.view">
+        <field name="name">
+            res.users.view.form.inherit.ent.oh.employee.creation.from.user
+        </field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet//group" position="inside">
+                <field name="employee_id"
+                       string="Related Employee"
+                       readonly="1"
+                       groups="base.group_no_one"
+                       invisible="not id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_hr_custody_manager","access.hr.custody.manager","model_hr_custody","hr.group_hr_manager",1,1,1,1
+"access_hr_custody_officer","access.hr.custody.officer","model_hr_custody","hr.group_hr_user",1,1,1,1
+"access_hr_custody_user","access.hr.custody.user","model_hr_custody","base.group_user",1,1,1,0
+"access_custody_property_manager","access.custody.property.manager","model_custody_property","hr.group_hr_manager",1,1,1,1
+"access_custody_property_officer","access.custody.property.officer","model_custody_property","hr.group_hr_user",1,1,1,1
+"access_custody_property_user","access.custody.property.user","model_custody_property","base.group_user",1,0,0,0
+"access_contract_renewal_manager","access.contract.renewal.manager","model_contract_renewal","hr.group_hr_manager",1,1,1,1
+"access_report_custody_manager","access.report.custody.manager","model_report_custody","hr.group_hr_manager",1,1,1,1
+"access_contract_renewal_officer","access.contract.renewal.officer","model_contract_renewal","hr.group_hr_user",1,1,1,1
+"access_report_custody_officer","access.report.custody.officer","model_report_custody","hr.group_hr_user",1,1,1,1
+"access_contract_renewal_user","access.contract.renewal.user","model_contract_renewal","base.group_user",1,1,1,0
+"access_custody_refuse_manager","access.custody.refuse.manager","model_custody_refuse","hr.group_hr_manager",1,1,1,1
