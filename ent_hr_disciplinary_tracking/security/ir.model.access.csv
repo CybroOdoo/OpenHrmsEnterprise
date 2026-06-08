@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_disciplinary_action_manager,access.disciplinary.action.manager,model_disciplinary_action,hr.group_hr_manager,1,1,1,1
+access_disciplinary_action_user,access.disciplinary.action.user,model_disciplinary_action,base.group_user,1,1,0,0
+access_discipline_category_manager,access.discipline.category.manager,model_discipline_category,hr.group_hr_manager,1,1,1,1
+access_disciplinary_action_officer,access.disciplinary.action.officer,model_disciplinary_action,hr.group_hr_user,1,1,1,1
+access_discipline_category_officer,access.discipline.category.officer,model_discipline_category,hr.group_hr_user,1,0,0,0
+access_discipline_category_user,access.discipline.category.user,model_discipline_category,base.group_user,1,0,0,0

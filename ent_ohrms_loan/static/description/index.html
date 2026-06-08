@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enterprise OpenHRMS Loan Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #00438B;
+      --bg-white: #fff;
+      --text-color: #121212;
+      --text-color-light: #64728f;
+    }
+    body { font-family: "Montserrat", sans-serif; background-color: #00438b08; }
+
+    /* Support banner */
+    .support-badge {
+      background-color: #017E84 !important;
+      font-size: 0.85rem !important;
+      color: #fff !important;
+      font-weight: 500 !important;
+      padding: 6px 16px !important;
+      border-radius: 50px !important;
+      min-width: 120px !important;
+      text-align: center;
+      display: inline-block;
+    }
+
+    /* Nav tabs */
+    .nav-tabs .nav-link.active {
+      color: var(--text-color);
+      font-size: 16px !important;
+      font-weight: 500 !important;
+      border-radius: 30px;
+      background-color: #F5F5F5;
+      border: none;
+      padding: 12px 24px;
+    }
+    .nav-tabs .nav-link {
+      color: #64728f;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .nav-tabs .nav-link:hover { background-color: #f0f0f0; border-color: transparent; }
+    .nav-tabs { border-bottom: none; }
+
+    /* Highlight cards */
+    .highlight-card {
+      background-color: #00438b10;
+      border-radius: 10px;
+      padding: 32px;
+      border: 2px solid #00438b1a;
+      height: 100%;
+    }
+    .highlight-icon {
+      width: 60px; height: 60px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      background-color: var(--primary-color);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Feature items */
+    .feature-item {
+      padding: 25px;
+      background-color: #00438b08;
+      border-radius: 10px;
+      text-align: center;
+      height: 100%;
+    }
+    .feature-number {
+      width: 45px; height: 45px;
+      background-color: #00438b22;
+      border-radius: 50%;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--primary-color);
+      margin: 0 auto 15px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* Screenshot cards */
+    .screenshot-block { margin-bottom: 3rem; }
+    .screenshot-block img { border-radius: 10px; border: 2px solid #e7e7e7; max-width: 100%; height: auto; }
+
+    /* Accordion */
+    .accordion-item {
+      margin-bottom: 1rem;
+      overflow: hidden;
+      background-color: white;
+      border: 2px solid #e2e8f0 !important;
+      border-radius: 10px !important;
+    }
+    .accordion-button {
+      box-shadow: unset !important;
+      border: none !important;
+      padding: 1.5rem 2rem !important;
+      font-weight: 600 !important;
+      font-size: 1.05rem;
+      color: var(--primary-color) !important;
+      background-color: #00438b0d !important;
+    }
+    .accordion-button:not(.collapsed) { background-color: #00438b18 !important; }
+    .accordion-body { background-color: rgba(0,67,139,0.02); line-height: 1.6; font-size: 1rem; padding: 2rem !important; }
+
+    /* Release badge */
+    .release-add { background-color: #9ae6b4; color: #2d7d32; border: 2px solid #68d391; padding: 3px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+
+    /* Services */
+    .service-card {
+      background-color: #00438b10;
+      border-radius: 10px;
+      padding: 32px;
+      border: 2px solid #00438b1a;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; height: 100%;
+    }
+    .service-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    /* Contact buttons */
+    .btn-email {
+      background-color: #00438B;
+      border-radius: 50px;
+      color: #fff;
+      padding: 12px 28px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 15px;
+    }
+    .btn-skype {
+      background-color: transparent;
+      border: 2px solid var(--primary-color);
+      border-radius: 50px;
+      color: var(--primary-color);
+      padding: 12px 28px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 15px;
+    }
+    .btn-email:hover { background-color: #00306a; color: #fff; }
+    .btn-skype:hover { background-color: #00438b10; }
+
+    /* Related modules */
+    .module-card {
+      border: 1px solid #CBCBCB;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+      text-decoration: none;
+      color: #000;
+      display: block;
+    }
+    .module-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12); color: #000; }
+    .module-card img { width: 100%; height: auto; }
+    .module-card p { font-weight: 600; text-align: center; padding: 12px 8px 8px; margin: 0; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+  <!-- Support Banner -->
+  <div class="container-fluid px-4 px-md-5">
+    <div class="my-3 py-3" style="border: 2px solid #e9ecef; padding: 0 35px !important; border-radius: 10px; background-color: white;">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-lg-3 py-2">
+          <div style="max-width:220px;">
+            <img src="./assets/icons/cybro-logo.png" style="width:100%; height:auto;">
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="d-flex align-items-center justify-content-end gap-2 flex-wrap py-2">
+            <span class="me-2"><b>Supports: </b></span>
+            <span class="support-badge">Enterprise</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="container-fluid px-4 px-md-5 py-4">
+    <div style="border-radius: 16px; background: #f8f8f8; padding: 40px 20px 0; position: relative; overflow: hidden;">
+      <!-- decorative bg layers behind everything -->
+      <div style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 1; pointer-events: none;">
+        <img src="./assets/icons/banner-bg.svg" class="w-100">
+      </div>
+      <div style="position: absolute; bottom: 0; right: 0; z-index: 2; pointer-events: none;">
+        <img src="./assets/icons/patter.svg">
+      </div>
+      <!-- content above decorative layers -->
+      <div style="position: relative; z-index: 3;">
+        <div class="row">
+          <div class="col-lg-8 mx-auto d-flex flex-column align-items-center gap-3 text-center">
+            <h1 style="color: var(--text-color); font-size: clamp(28px, 4vw, 46px); font-weight: 700; line-height: 1.2; margin: 0;">
+              Enterprise OpenHRMS Loan Management
+            </h1>
+            <p style="letter-spacing: 4px; color: var(--primary-color); font-weight: 700; font-size: 13px; text-transform: uppercase; margin: 0;">
+              Manage Loan Requests of Employees
+            </p>
+            <div class="d-flex gap-3 flex-wrap justify-content-center mt-2">
+              <a href="mailto:odoo@cybrosys.com" class="btn-email">
+                <img src="./assets/icons/email (2).svg" style="width:20px"> Email Us
+              </a>
+              <a href="skype:cybroopenerp?chat" class="btn-skype">
+                <img src="./assets/icons/skype.svg" style="width:20px"> Skype Us
+              </a>
+            </div>
+            <div class="d-flex justify-content-center gap-4 align-items-center mt-3">
+              <img src="./assets/icons/cybro-logo.png" style="width: 140px; height: auto;" />
+              <img src="./assets/icons/logo-openhrms.png" style="width: 140px; height: auto;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Highlights -->
+  <div class="container-fluid px-4 px-md-5 py-4">
+    <div style="border-radius: 16px; padding: 60px 40px; border: 1px solid #EBEEF2;
+         background-image: url('./assets/icons/blue-abstract-gradient-wave-wallpaper.jpg');
+         background-position: center; object-fit: cover;
+         box-shadow: 0px 5px 20px -11px rgba(0,0,0,0.25);">
+      <h2 class="text-center text-uppercase mb-5" style="font-size: 38px; font-weight: 700; color: var(--text-color);">Key Highlights</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="highlight-card">
+            <div class="highlight-icon">
+              <img src="./assets/icons/feature-icon.svg" width="24" height="24">
+            </div>
+            <h5 style="font-weight: 700; color: #000; margin-bottom: 10px;">Loan Request</h5>
+            <p style="font-size: 15px; color: var(--text-color-light); margin: 0; line-height: 1.6;">
+              OpenHRMS Loan helps users configure different loan policies and assign approval authorities with a seamless request workflow.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="highlight-card">
+            <div class="highlight-icon">
+              <img src="./assets/icons/feature-icon.svg" width="24" height="24">
+            </div>
+            <h5 style="font-weight: 700; color: #000; margin-bottom: 10px;">Verification & Approval</h5>
+            <p style="font-size: 15px; color: var(--text-color-light); margin: 0; line-height: 1.6;">
+              Conduct the verification process and sanction loans for employees with multi-level approval from HR and Accounts.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="highlight-card">
+            <div class="highlight-icon">
+              <img src="./assets/icons/feature-icon.svg" width="24" height="24">
+            </div>
+            <h5 style="font-weight: 700; color: #000; margin-bottom: 10px;">Payslip Integration</h5>
+            <p style="font-size: 15px; color: var(--text-color-light); margin: 0; line-height: 1.6;">
+              Installment amounts are automatically deducted from the employee's monthly payslip, keeping records accurate and up-to-date.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Banner -->
+  <div class="container-fluid px-4 px-md-5 py-4">
+    <div style="padding: 4rem; background-color: #00438B; border-radius: 12px; position: relative; overflow: hidden;">
+      <div style="position: relative; z-index: 2; max-width: 500px;">
+        <h2 style="font-size: 36px; font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 12px;">
+          Enterprise OpenHRMS Loan Management
+        </h2>
+        <p style="font-size: 18px; font-weight: 400; color: #fff; line-height: 1.7; margin-bottom: 24px;">
+          Are you ready to make your business more organized? <br> Improve now!
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="mailto:odoo@cybrosys.com" style="cursor: pointer; border-radius: 16px; display: flex; align-items: center; gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);
+            background: linear-gradient(93deg, rgba(255,255,255,0.08) 6%, rgba(255,255,255,0.17) 91%);
+            color: #fff; padding: 12px 20px; text-decoration: none; font-weight: 500;">
+            <span style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 10px;">
+              <img src="./assets/icons/banner-mail.svg">
+            </span>
+            odoo@cybrosys.com
+          </a>
+          <a href="https://wa.me/919074270811" target="_blank" style="cursor: pointer; border-radius: 16px; display: flex; align-items: center; gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);
+            background: linear-gradient(93deg, rgba(255,255,255,0.08) 6%, rgba(255,255,255,0.17) 91%);
+            color: #fff; padding: 12px 20px; text-decoration: none; font-weight: 500;">
+            <span style="background: rgba(255,255,255,0.1); border-radius: 10px; padding: 10px;">
+              <img src="./assets/icons/banner-call.svg">
+            </span>
+            +91 9074270811
+          </a>
+        </div>
+      </div>
+      <div style="position: absolute; bottom: 0; right: 0; z-index: 1;">
+        <img src="./assets/icons/banner-logo-pattern.svg" style="width: 480px; opacity: 0.9;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshots / Features / FAQ / Releases Tabs -->
+  <div class="container-fluid px-4 px-md-5 py-4">
+    <div style="border: 1px solid #EBEEF2; border-radius: 10px; background: #fff; box-shadow: 0px 8px 20px -4px rgba(0,0,0,0.08);">
+      <div style="border-bottom: 1px solid #f0f0f0; padding: 8px 0;">
+        <ul class="nav nav-tabs justify-content-center" id="mainTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#screenshots" role="tab">Screenshots</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#features" role="tab">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#faq" role="tab">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#releases" role="tab">Releases</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content p-md-5 p-3">
+
+        <!-- Screenshots Tab -->
+        <div class="tab-pane fade show active" id="screenshots" role="tabpanel">
+
+          <div class="screenshot-block text-center" style="background-color:#f4f4f4; border-radius:10px; padding: 40px;">
+            <h2 style="font-size: clamp(20px,3vw,36px); font-weight:700; color:#121212; margin-bottom: 24px;">
+              After Installing the Module, Loan Deduction Rule is Automatically Created.
+            </h2>
+            <div class="d-inline-block p-3 shadow-sm" style="background:#fff; border-radius:10px;">
+              <img src="./assets/screenshots/1.png" alt="Loan Deduction Rule">
+            </div>
+          </div>
+
+          <div class="screenshot-block text-center mt-4" style="background-color:#f4f4f4; border-radius:10px; padding: 40px;">
+            <h2 style="font-size: clamp(20px,3vw,36px); font-weight:700; color:#121212; margin-bottom: 24px;">
+              Add the Deduction Rule for Loan in Salary Structure.
+            </h2>
+            <div class="d-inline-block p-3 shadow-sm" style="background:#fff; border-radius:10px;">
+              <img src="./assets/screenshots/2.png" alt="Salary Structure Rule">
+            </div>
+          </div>
+
+          <div class="screenshot-block text-center mt-4" style="background-color:#f4f4f4; border-radius:10px; padding: 40px;">
+            <h2 style="font-size: clamp(20px,3vw,36px); font-weight:700; color:#121212; margin-bottom: 24px;">
+              Employee Can Create a Loan Request. Once HR Approves, Accounts Takes the Decision.
+            </h2>
+            <div class="d-inline-block p-3 shadow-sm" style="background:#fff; border-radius:10px;">
+              <img src="./assets/screenshots/3.png" alt="Loan Request">
+            </div>
+          </div>
+
+          <div class="screenshot-block text-center mt-4" style="background-color:#f4f4f4; border-radius:10px; padding: 40px;">
+            <h2 style="font-size: clamp(20px,3vw,36px); font-weight:700; color:#121212; margin-bottom: 24px;">
+              The Installment Amount in Each Month is Listed.
+            </h2>
+            <div class="d-inline-block p-3 shadow-sm" style="background:#fff; border-radius:10px;">
+              <img src="./assets/screenshots/4.png" alt="Installment List">
+            </div>
+          </div>
+
+          <div class="screenshot-block text-center mt-4" style="background-color:#f4f4f4; border-radius:10px; padding: 40px;">
+            <h2 style="font-size: clamp(20px,3vw,36px); font-weight:700; color:#121212; margin-bottom: 24px;">
+              When We Create the Payslip, All Pending Installments of the Month Will Be Listed.
+            </h2>
+            <div class="d-inline-block p-3 shadow-sm" style="background:#fff; border-radius:10px;">
+              <img src="./assets/screenshots/5.png" alt="Payslip Installments">
+            </div>
+          </div>
+
+          <div class="screenshot-block text-center mt-4" style="background-color:#f4f4f4; border-radius:10px; padding: 40px;">
+            <h2 style="font-size: clamp(20px,3vw,36px); font-weight:700; color:#121212; margin-bottom: 24px;">
+              When We Check the Loan Request Again, Deducted Installments Will Be Marked as 'Paid'.
+            </h2>
+            <div class="d-inline-block p-3 shadow-sm" style="background:#fff; border-radius:10px;">
+              <img src="./assets/screenshots/6.png" alt="Paid Installments">
+            </div>
+          </div>
+
+          <div class="screenshot-block text-center mt-4" style="background-color:#f4f4f4; border-radius:10px; padding: 40px;">
+            <h2 style="font-size: clamp(20px,3vw,36px); font-weight:700; color:#121212; margin-bottom: 24px;">
+              Display the Number of Loans Associated with Each Employee.
+            </h2>
+            <div class="d-inline-block p-3 shadow-sm" style="background:#fff; border-radius:10px;">
+              <img src="./assets/screenshots/7.png" alt="Employee Loan Count">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Features Tab -->
+        <div class="tab-pane fade" id="features" role="tabpanel">
+          <h2 class="text-center mb-5" style="font-size: 2rem; font-weight: 700; color: #000;">Our <span style="color: var(--primary-color);">Features</span></h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="feature-item">
+                <div class="feature-number">01</div>
+                <h3 style="font-size:1.1rem;font-weight:600;color:black;line-height:1.4;">Employee Can Create Loan Request</h3>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-item">
+                <div class="feature-number">02</div>
+                <h3 style="font-size:1.1rem;font-weight:600;color:black;line-height:1.4;">Amount Automatically Deducted from Monthly Payslip</h3>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-item">
+                <div class="feature-number">03</div>
+                <h3 style="font-size:1.1rem;font-weight:600;color:black;line-height:1.4;">Multi-Level Approval: HR & Accounts Department</h3>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-item">
+                <div class="feature-number">04</div>
+                <h3 style="font-size:1.1rem;font-weight:600;color:black;line-height:1.4;">Installment Schedule Auto-Generated Based on Loan Amount</h3>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-item">
+                <div class="feature-number">05</div>
+                <h3 style="font-size:1.1rem;font-weight:600;color:black;line-height:1.4;">Installments Marked as Paid After Payslip Confirmation</h3>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-item">
+                <div class="feature-number">06</div>
+                <h3 style="font-size:1.1rem;font-weight:600;color:black;line-height:1.4;">Loan Count Visible on Each Employee's Profile</h3>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-item">
+                <div class="feature-number">07</div>
+                <h3 style="font-size:1.1rem;font-weight:600;color:black;line-height:1.4;">Loan Deduction Rule Automatically Created on Module Install</h3>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-item">
+                <div class="feature-number">08</div>
+                <h3 style="font-size:1.1rem;font-weight:600;color:black;line-height:1.4;">Supports Multi-Company & Multi-Currency</h3>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-item">
+                <div class="feature-number">09</div>
+                <h3 style="font-size:1.1rem;font-weight:600;color:black;line-height:1.4;">Available in Odoo 19.0 Enterprise</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Tab -->
+        <div class="tab-pane fade" id="faq" role="tabpanel">
+          <h2 class="text-center mb-5" style="font-size: 2rem; font-weight: 700; color: #000;">Frequently Asked <span style="color: var(--primary-color);">Questions</span></h2>
+          <div class="accordion accordion-flush" id="accordionFAQ">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  How can an employee submit a loan request?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  Employees can submit a loan request by navigating to the <strong>Loans &amp; Advances</strong> menu from the Employee module. Fill in the loan amount, number of installments, and payment start date, then click Submit.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Who will approve the request for the loan?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  The HR Manager approves the loan request. Users in the <strong>hr.group_hr_manager</strong> group will see the Approve and Refuse buttons on submitted loan requests.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  How is the loan amount deducted from the payslip?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  When you click <strong>Compute Sheet</strong> on a payslip that uses the Loan Salary Structure, the module automatically finds any approved loan installment falling within the payslip period and adds it to the Salary Inputs tab as a deduction.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Can an employee have multiple active loans?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  No. The system prevents creating a new approved loan if the employee already has one with a pending balance. This ensures controlled and traceable loan management.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Releases Tab -->
+        <div class="tab-pane fade" id="releases" role="tabpanel">
+          <h2 class="text-center mb-5" style="font-size: 2rem; font-weight: 700; color: #000;">Latest <span style="color: var(--primary-color);">Releases</span></h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div style="position: relative; padding: 30px; border: 2px solid #00438b24; border-radius: 15px;">
+                <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                  <span style="font-size: 1.2rem; font-weight: 700; color: #1a202c;">19.0.1.0.0</span>
+                  <span class="release-add">Add</span>
+                  <span style="color: #64748b; font-size: 0.85rem; font-weight: 500;">
+                    <i class="fa fa-calendar me-1"></i>12th March, 2026
+                  </span>
+                </div>
+                <div style="background-color:#f5f5f5; border-radius:10px; padding:14px 18px; color:#6b7280; font-size:0.95rem; line-height:1.6;">
+                  Initial Commit
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Modules -->
+  <div class="container-fluid px-4 px-md-5 py-4">
+    <h2 class="text-center text-uppercase mb-5" style="font-size: 38px; font-weight: 700; color: #000;">Related Modules</h2>
+    <div class="row g-3">
+      <div class="col-md-2 col-sm-4 col-6">
+        <a href="https://apps.odoo.com/apps/modules/19.0/hr_employee_transfer/" class="module-card">
+          <img src="assets/modules/1.jpg" alt="Branch Transfer">
+          <p>Open HRMS Branch Transfer</p>
+        </a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-6">
+        <a href="https://apps.odoo.com/apps/modules/19.0/ohrms_core" class="module-card">
+          <img src="assets/modules/2.jpg" alt="HRMS Core">
+          <p>Open HRMS Core</p>
+        </a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-6">
+        <a href="https://apps.odoo.com/apps/modules/19.0/hr_employee_updation" class="module-card">
+          <img src="assets/modules/3.jpg" alt="Employee Info">
+          <p>Open HRMS Employee Info</p>
+        </a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-6">
+        <a href="https://apps.odoo.com/apps/modules/19.0/hrms_dashboard" class="module-card">
+          <img src="assets/modules/4.jpg" alt="Dashboard">
+          <p>Enterprise OpenHRMS Dashboard</p>
+        </a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-6">
+        <a href="https://apps.odoo.com/apps/modules/19.0/oh_appraisal" class="module-card">
+          <img src="assets/modules/5.jpg" alt="Appraisal">
+          <p>Open HRMS Employee Appraisal</p>
+        </a>
+      </div>
+      <div class="col-md-2 col-sm-4 col-6">
+        <a href="https://apps.odoo.com/apps/modules/19.0/hr_reminder" class="module-card">
+          <img src="assets/modules/6.jpg" alt="Reminder">
+          <p>Open HRMS Reminder Todo</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Services -->
+  <div class="container-fluid px-4 px-md-5 py-4 mb-5">
+    <div style="border-radius: 16px; border: 1px solid #EBEEF2; background: #fff; padding: 60px 40px; box-shadow: 0px 5px 20px -11px rgba(0,0,0,0.25);">
+      <h2 class="text-center text-uppercase mb-5" style="font-size: 38px; font-weight: 700; color: #000;">Our Services</h2>
+      <div class="row g-3">
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-card" style="background-color:#FFE2E5;">
+            <div class="service-icon" style="background-color:#FA5A7D;">
+              <img src="./assets/icons/gear.svg" width="26" height="26">
+            </div>
+            <span style="font-size:16px;font-weight:600;color:var(--text-color);">Odoo Customization</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-card" style="background-color:#FFF4DE;">
+            <div class="service-icon" style="background-color:#FF947A;">
+              <img src="./assets/icons/wrench-icon.svg" width="26" height="26">
+            </div>
+            <span style="font-size:16px;font-weight:600;color:var(--text-color);">Odoo Implementation</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-card" style="background-color:#DCFCE7;">
+            <div class="service-icon" style="background-color:#3CD856;">
+              <img src="./assets/icons/life-ring-icon.svg" width="26" height="26">
+            </div>
+            <span style="font-size:16px;font-weight:600;color:var(--text-color);">Odoo Support</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-card" style="background-color:#F3E8FF;">
+            <div class="service-icon" style="background-color:#BF83FF;">
+              <img src="./assets/icons/arrows-repeat.svg" width="26" height="26">
+            </div>
+            <span style="font-size:16px;font-weight:600;color:var(--text-color);">Odoo Migration</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-card" style="background-color:#F1F9FF;">
+            <div class="service-icon" style="background-color:#01649C;">
+              <img src="./assets/icons/puzzle-piece-icon.svg" width="26" height="26">
+            </div>
+            <span style="font-size:16px;font-weight:600;color:var(--text-color);">Odoo Integration</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-card" style="background-color:#EDF8ED;">
+            <div class="service-icon" style="background-color:#69CC70;">
+              <img src="./assets/icons/odoo-consultancy.svg" width="26" height="26">
+            </div>
+            <span style="font-size:16px;font-weight:600;color:var(--text-color);">Odoo Consultancy</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-card" style="background-color:#F1F6FF;">
+            <div class="service-icon" style="background-color:#2E4556;">
+              <img src="./assets/icons/odoo-licencing.svg" width="26" height="26">
+            </div>
+            <span style="font-size:16px;font-weight:600;color:var(--text-color);">Odoo Licensing</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-card" style="background-color:#FAF6EA;">
+            <div class="service-icon" style="background-color:#FCD12C;">
+              <img src="./assets/icons/hire-odoo.svg" width="26" height="26">
+            </div>
+            <span style="font-size:16px;font-weight:600;color:var(--text-color);">Hire Odoo Developer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

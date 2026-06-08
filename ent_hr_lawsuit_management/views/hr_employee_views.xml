@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--Employee form view inherited for add the custom fields-->
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="name">hr.employee.view.form.inherit.ent.hr.lawsuit.management</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <div class="oe_button_box" position="inside">
+                <button name="action_legal_view"
+                        class="oe_stat_button"
+                        invisible="legal_count == 0"
+                        icon="fa-users"
+                        type="object">
+                    <field name="legal_count" widget="statinfo"
+                           string="Legal Actions"/>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

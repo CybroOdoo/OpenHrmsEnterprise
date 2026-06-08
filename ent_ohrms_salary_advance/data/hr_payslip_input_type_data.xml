@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Payslip input type data-->
+        <record id="hr_rule_input_advance" model="hr.payslip.input.type">
+            <field name="code">SAR</field>
+            <field name="name">Salary Advance</field>
+            <field name="input_id" ref="hr_payslip_rule_advance"/>
+        </record>
+    </data>
+</odoo>

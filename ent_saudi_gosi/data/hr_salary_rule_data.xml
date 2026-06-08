@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="hr_rule_gosi" model="hr.salary.rule">
+            <field name="name">GOSI Contribution For Saudi Employee</field>
+            <field name="code">GOSI</field>
+            <field name="sequence" eval="150"/>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="partner_id" ref="contribution_register_gosi"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">wage = version.wage
+result = -((wage + (wage * 3 / 12)) * 9 / 100)</field>
+            <field name="struct_id" ref="structure_003"/>
+        </record>
+
+        <record id="hr_rule_gosi_comp" model="hr.salary.rule">
+            <field name="name">GOSI Company Contribution For Saudi Employee</field>
+            <field name="code">GOSI_COMP</field>
+            <field name="sequence" eval="99"/>
+            <field name="category_id" ref="hr_payroll.COMP"/>
+            <field name="partner_id" ref="contribution_register_gosicompany"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">wage = version.wage
+result = (((wage + (wage * 3 / 12)) * 9 / 100) + (wage * 2 / 100))</field>
+            <field name="struct_id" ref="structure_003"/>
+        </record>
+
+    </data>
+</odoo>

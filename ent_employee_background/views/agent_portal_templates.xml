@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- =====================================================================
+         1. Portal Home: Add "Employee Verification" entry in My Account
+         ===================================================================== -->
+    <template id="portal_my_home_agent"
+              name="Portal My Home Agent : Verification entries"
+              inherit_id="portal.portal_my_home" priority="21">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Employee Verification</t>
+                <t t-set="url" t-value="'/my/records'"/>
+                <t t-set="placeholder_count" t-value="'verification_count'"/>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- =====================================================================
+         2. Portal Breadcrumbs
+         ===================================================================== -->
+    <template id="portal_my_home_menu_employee"
+              name="Portal layout : employee menu entries"
+              inherit_id="portal.portal_breadcrumbs" priority="20">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'employee'">
+                <span style="padding-left:8px;">/</span>
+                <span>Employees</span>
+            </li>
+            <li t-if="page_name == 'employee_details'">
+                <span style="padding-left:8px;">/</span>
+                <a t-attf-href="/my/records?{{ keep_query() }}">
+                    <span style="padding-left:8px;">Employees</span>
+                </a>
+                <t t-if="records">
+                    <span style="padding-left:8px;">/</span>
+                    <span style="padding-left:8px;">
+                        <t t-esc="records.employee_id.name"/>
+                    </span>
+                </t>
+                <t t-else="">Employees</t>
+            </li>
+        </xpath>
+    </template>
+
+    <!-- =====================================================================
+         3. Portal: List of assigned verifications (/my/records)
+             — FIX: removed duplicate id, kept the improved version only
+         ===================================================================== -->
+    <template id="portal_my_records" name="Employee Verification List">
+        <t t-call="portal.portal_layout">
+            <t t-set="additional_title">My Employee Verifications</t>
+
+            <t t-if="not records">
+                <div class="text-center py-5 my-5">
+                    <i class="fa fa-folder-open fa-5x text-muted mb-4"/>
+                    <h4 class="text-muted">No verifications assigned</h4>
+                    <p class="text-muted">
+                        There are currently no employee background
+                        verification records assigned to your account.
+                    </p>
+                </div>
+            </t>
+
+            <t t-if="records">
+                <div class="card o_portal_card">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Assigned Verifications</h3>
+                        <div class="table-responsive">
+                            <table class="table table-hover o_portal_my_doc_table">
+                                <thead>
+                                    <tr>
+                                        <th>Employee</th>
+                                        <th>Assigned Date</th>
+                                        <th>Address</th>
+                                        <th/>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="records" t-as="record">
+                                        <tr>
+                                            <td>
+                                                <a t-attf-href="/my/details/#{record.id}?#{keep_query()}">
+                                                    <strong><t t-esc="record.employee_id.name"/></strong>
+                                                </a>
+                                            </td>
+                                            <td><t t-esc="record.assigned_date"/></td>
+                                            <td><t t-esc="record.address_id.display_name or '—'"/></td>
+                                            <td class="text-end">
+                                                <a t-attf-href="/my/details/#{record.id}?#{keep_query()}"
+                                                   class="btn btn-sm btn-primary">
+                                                    View Details
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div t-if="pager" class="o_portal_pager mt-4 text-center">
+                            <t t-call="portal.pager"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- =====================================================================
+         4. Portal: Detail page for one verification (/my/details/<id>)
+             — FIX: this template was MISSING — it is what renders the
+               screenshot view (Personal Details, Download button, Upload form)
+         ===================================================================== -->
+    <template id="portal_record_page" name="Employee Verification Detail">
+        <t t-call="portal.portal_layout">
+            <t t-set="additional_title">
+                <t t-esc="records.employee_id.name"/>
+            </t>
+
+            <!-- Personal Details card -->
+            <div class="card mb-3">
+                <div class="card-header bg-white">
+                    <strong>Personal Details</strong>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-borderless mb-0">
+                        <tr class="border-bottom">
+                            <th class="w-50 ps-3 py-3" style="font-size:1.4rem;">Name</th>
+                            <td class="py-3" style="font-size:1.4rem;">
+                                <t t-esc="records.employee_id.name"/>
+                            </td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <th class="ps-3 py-3">Address</th>
+                            <td class="py-3">
+                                <t t-esc="records.address_id.display_name or ''"/>
+                            </td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <th class="ps-3 py-3">Assigned Date</th>
+                            <td class="py-3">
+                                <span t-field="records.assigned_date"/>
+                            </td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <th class="ps-3 py-3">Expected completion Date</th>
+                            <td class="py-3">
+                                <span t-field="records.expected_date"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="ps-3 py-3">Private details</th>
+                            <td class="py-3">
+                                <a t-attf-href="/my/attachments/download/#{records.id}"
+                                   class="btn btn-primary">
+                                    <i class="fa fa-download me-1"/>
+                                    Download
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Submit form — only shown when still in 'assign' state -->
+            <t t-if="records.state == 'assign'">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/my/verification/submit" method="post"
+                              enctype="multipart/form-data">
+                            <input type="hidden" name="csrf_token"
+                                   t-att-value="request.csrf_token()"/>
+                            <input type="hidden" name="employee_token"
+                                   t-att-value="records.id"/>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="description">Description</label>
+                                <input type="text" name="description"
+                                       id="description"
+                                       class="form-control"
+                                       placeholder="Verification completed"/>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="attachment">Upload file if any</label>
+                                <input type="file" name="attachment"
+                                       id="attachment"
+                                       class="form-control"
+                                       accept="application/pdf"/>
+                            </div>
+
+                            <button type="submit" class="btn btn-secondary">
+                                <i class="fa fa-upload me-1"/>
+                                Upload
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </t>
+
+            <!-- Already submitted -->
+            <t t-if="records.state == 'submit'">
+                <div class="alert alert-success mt-3">
+                    <strong>Verification submitted.</strong>
+                    <span t-if="records.description_by_agency">
+                        — <t t-esc="records.description_by_agency"/>
+                    </span>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <!-- =====================================================================
+         5. Confirmation page after upload
+         ===================================================================== -->
+    <template id="portal_record_completed"
+              name="Employee Verification Completed">
+        <t t-call="portal.portal_layout">
+            <div class="alert alert-success mt-4 text-center">
+                <h3><i class="fa fa-check-circle me-2"/>Report Successfully Submitted</h3>
+                <p>Your background verification report has been received.</p>
+                <a href="/my/records" class="btn btn-primary mt-2">
+                    Back to My Records
+                </a>
+            </div>
+        </t>
+    </template>
+
+</odoo>

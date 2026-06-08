@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Sequence for generating lawsuit reference codes -->
+        <record id="lawsuit_seq" model="ir.sequence">
+            <field name="name">Lawsuit Code</field>
+            <field name="code">hr.lawsuit</field>
+            <field name="prefix">LC</field>
+            <field eval="4" name="padding"/>
+        </record>
+    </data>
+</odoo>

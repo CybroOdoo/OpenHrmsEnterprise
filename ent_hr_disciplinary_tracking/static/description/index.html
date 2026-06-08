@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enterprise Open HRMS Disciplinary Tracking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <style>
+        body { font-family: "Montserrat", sans-serif; background-color: #00438b08; }
+        span { color: #00438B; }
+        .cmpad { padding: 0 35px; }
+        @media (max-width: 768px) { .cmpad { padding: 0 15px; } }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="container-fluid cmpad">
+        <div class="supports my-3 py-3" style="border: 2px solid #e9ecef; padding: 0 35px; border-radius: 10px; background-color: white;">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-3">
+                    <div class="my-3 mx-auto mx-sm-0" style="width: 220px;">
+                        <img src="./assets/icons/cybro-logo.png" style="width: 100%;">
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="my-3 d-flex align-items-center justify-content-center justify-content-sm-end">
+                            <span class="me-3" style="color: inherit;"><b>Supports: </b></span>
+                            <div class="text-center" style="background-color: #017E84 !important; font-size: 1rem !important; color: #fff !important; font-weight: 500 !important; padding: 8px !important; margin: 0 3px !important; border-radius: 50px !important; min-width: 130px !important;">
+                                Enterprise
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 10px; display: flex; justify-content: end; float: right;">
+                        <div class="d-flex align-items-center justify-content-end flex-wrap gap-2">
+                            <span class="me-3" style="color: inherit;"><b>Availability: </b></span>
+                            <div class="d-flex align-items-center justify-content-center gap-2 text-center col" style="border: 2px solid #ebebeb; font-size: 1rem !important; color: #333 !important; font-weight: 500 !important; padding: 8px !important; margin: 0 3px !important; border-radius: 20px !important; min-width: 150px !important;">
+                                ✔ Odoo.sh
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="container-fluid cmpad text-center py-5 py-md-3">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="mainhead" style="font-size: 2.3rem; padding-top: 1rem; font-weight: 700; color: black;">
+                    Enterprise Open HRMS Employee Disciplinary Tracking
+                </h3>
+                <p class="para mb-4" style="font-size: 20px; color: #6b7280;">
+                    A complete disciplinary management solution for Odoo HR. Track and maintain employee
+                    disciplinary actions, assign reasons, collect explanations, and validate final actions —
+                    all from within Odoo.
+                </p>
+                <div class="d-flex justify-content-center gap-1 flex-wrap">
+                    <a href="mailto:odoo@cybrosys.com"
+                        class="d-flex align-items-center gap-2 justify-content-center"
+                        style="position: relative; padding: 15px 25px; border: none; border-radius: 50px; font-size: 16px; font-weight: 600; text-decoration: none; color: white; cursor: pointer; min-width: 200px; background-color: #4facfe;">
+                        <i class="fa fa-envelope" style="font-size: 18px;"></i>
+                        <span style="color: white; font-size: 15px; letter-spacing: 0.5px;">Email Us</span>
+                    </a>
+                    <a href="skype:cybroopenerp?chat"
+                        class="d-flex align-items-center gap-2 justify-content-center"
+                        style="position: relative; padding: 15px 25px; border: none; border-radius: 50px; font-size: 16px; font-weight: 600; text-decoration: none; color: white; cursor: pointer; min-width: 200px; background-color: #00438B;">
+                        <img src="./assets/icons/skype.svg" alt="" width="25" height="25">
+                        <span style="color: white; font-size: 15px; letter-spacing: 0.5px;">Skype Us</span>
+                    </a>
+                    <a href="https://wa.me/919074270811" target="_blank"
+                        class="d-flex align-items-center gap-2 justify-content-center"
+                        style="position: relative; padding: 15px 25px; border: none; border-radius: 50px; font-size: 16px; font-weight: 600; text-decoration: none; color: white; cursor: pointer; min-width: 200px; background-color: #25d366;">
+                        <i class="fa fa-phone" style="font-size: 18px;"></i>
+                        <span style="color: white; font-size: 15px; letter-spacing: 0.5px;">+91 9074270811</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- KEY HIGHLIGHTS -->
+    <div class="container-fluid cmpad py-2 py-md-5">
+        <div class="highlights-section">
+            <h2 class="mainhead text-center" style="font-size: 2rem; font-weight: 700; color: black;">Key <span>Highlights</span></h2>
+            <div class="row" style="margin-top: 20px;">
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1f; backdrop-filter: blur(20px); border-radius: 10px; padding: 32px; border: 2px solid #00438b1a; position: relative; overflow: hidden;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-exclamation-triangle" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Disciplinary Actions</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            Track and maintain disciplinary actions of employees with a structured workflow from draft to validation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1f; backdrop-filter: blur(20px); border-radius: 10px; padding: 32px; border: 2px solid #00438b1a; position: relative; overflow: hidden;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-plus-circle" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Create Disciplinary Issues</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            Managers can assign disciplinary issues to employees with reasons, categories, and internal notes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1f; backdrop-filter: blur(20px); border-radius: 10px; padding: 32px; border: 2px solid #00438b1a; position: relative; overflow: hidden;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-comments" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Employee Explanation</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            Employees can give explanations against the issues with supporting documents and submit to the manager.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1f; backdrop-filter: blur(20px); border-radius: 10px; padding: 32px; border: 2px solid #00438b1a; position: relative; overflow: hidden;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-gavel" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Final Action</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            According to the employee's explanation, the manager can take and validate a final disciplinary action.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1f; backdrop-filter: blur(20px); border-radius: 10px; padding: 32px; border: 2px solid #00438b1a; position: relative; overflow: hidden;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-list-alt" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Discipline Categories</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            Manage disciplinary and action categories with codes and descriptions to organise records effectively.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1f; backdrop-filter: blur(20px); border-radius: 10px; padding: 32px; border: 2px solid #00438b1a; position: relative; overflow: hidden;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-user" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Employee Smart Button</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            View the count of validated disciplinary actions directly from the employee form via a smart button.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="container-fluid cmpad py-2 py-md-5">
+        <div class="tabs-design1">
+            <ul class="nav nav-pills justify-content-start justify-content-md-center pb-4" style="flex-flow: nowrap; overflow: hidden; overflow-x: auto;" id="pills1" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="screenshot-tab" data-bs-toggle="pill" data-bs-target="#screenshot" type="button" role="tab"
+                        style="width: max-content; border-radius: 50px; margin: 0 5px; padding: 12px 24px; font-weight: 500; border: 2px solid #e9ecef;">
+                        Screenshots
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="features-tab" data-bs-toggle="pill" data-bs-target="#features" type="button" role="tab"
+                        style="width: max-content; border-radius: 50px; margin: 0 5px; padding: 12px 24px; font-weight: 500; border: 2px solid #e9ecef;">
+                        Features
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="faq-tab" data-bs-toggle="pill" data-bs-target="#faq" type="button" role="tab"
+                        style="width: max-content; border-radius: 50px; margin: 0 5px; padding: 12px 24px; font-weight: 500; border: 2px solid #e9ecef;">
+                        Frequent Questions
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="latest-release-tab" data-bs-toggle="pill" data-bs-target="#latest-release" type="button" role="tab"
+                        style="width: max-content; border-radius: 50px; margin: 0 5px; padding: 12px 24px; font-weight: 500; border: 2px solid #e9ecef;">
+                        Latest Release
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content bg-white rounded-4" style="border: 2px solid #e9ecef; border-radius: 10px;" id="pills1Content">
+
+                <!-- SCREENSHOT TAB -->
+                <div class="tab-pane fade show active" id="screenshot" role="tabpanel">
+                    <div class="p-3 py-md-5">
+
+                        <h2 class="mainhead text-center mb-2" style="font-size: 2rem; font-weight: 700; color: black;"><span>Create Disciplinary Actions</span></h2>
+                        <div class="para" style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            Managers can create and assign disciplinary actions to employees with the relevant reason and details.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/1.png" alt="" style="max-width: 100%; height: auto;">
+                        </div>
+
+                        <h2 class="mainhead text-center mb-2 mt-5" style="font-size: 2rem; font-weight: 700; color: black;"><span>Waiting for Explanation</span></h2>
+                        <div class="para" style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            After proceeding, the record moves to the "Waiting Explanation" stage, prompting the employee to respond.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/2.png" alt="" style="max-width: 100%; height: auto;">
+                        </div>
+
+                        <h2 class="mainhead text-center mb-2 mt-5" style="font-size: 2rem; font-weight: 700; color: black;"><span>Take Action</span></h2>
+                        <div class="para" style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            Once an explanation is submitted, the manager can review and select an appropriate disciplinary action.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/3.png" alt="" style="max-width: 100%; height: auto;">
+                        </div>
+
+                        <h2 class="mainhead text-center mb-2 mt-5" style="font-size: 2rem; font-weight: 700; color: black;"><span>Action Validation</span></h2>
+                        <div class="para" style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            The disciplinary action after validation, with all details locked and the record marked as "Action Validated".
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/4.png" alt="" style="max-width: 100%; height: auto;">
+                        </div>
+
+                        <h2 class="mainhead text-center mb-2 mt-5" style="font-size: 2rem; font-weight: 700; color: black;"><span>Discipline Category</span></h2>
+                        <div class="para" style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            Click 'Discipline Category' menu to create and manage disciplinary reasons and action categories.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/5.png" alt="" style="max-width: 100%; height: auto;">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- FEATURES TAB -->
+                <div class="tab-pane fade" id="features" role="tabpanel">
+                    <div class="p-3 py-md-5">
+                        <h2 class="mainhead text-center mb-4" style="font-size: 2rem; font-weight: 700; color: black;">Module <span>Features</span></h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Manager can assign disciplinary issues to employees
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Employees can give explanations and submit to manager
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Structured workflow: Draft → Explanation → Action → Validated
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Manager can take final action based on employee explanation
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Attachment support for supporting documents
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Discipline categories for reasons and actions
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Smart button on employee form showing disciplinary action count
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Internal notes for HR manager reference
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Role-based access: restricted views for non-HR managers
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Chatter integration for tracking changes and communication
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Auto-generated sequence reference for each disciplinary record
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Cancel and reset to draft options for HR managers
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ TAB -->
+                <div class="tab-pane fade" id="faq" role="tabpanel">
+                    <div class="p-3 py-md-5">
+                        <h2 class="mainhead text-center mb-4" style="font-size: 2rem; font-weight: 700; color: black;">Frequently Asked <span>Questions</span></h2>
+                        <div class="accordion accordion-flush" id="accordionFaq">
+
+                            <div class="accordion-item" style="margin-bottom: 1rem; overflow: hidden; background-color: white; border: 2px solid #e2e8f0 !important; border-radius: 10px !important;">
+                                <h2 class="accordion-header" style="border-radius: 10px;">
+                                    <a class="accordion-button collapsed" type="button" style="box-shadow: unset; border: none !important; padding: 1.5rem 2rem !important; font-weight: 600 !important; font-size: 1.1rem; color: #00438B !important; background-color: #00438b12 !important; border-radius: 10px !important;" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="false">
+                                        What is the purpose of the Enterprise Open HRMS Employee Disciplinary Tracking module?
+                                    </a>
+                                </h2>
+                                <div id="faqOne" class="accordion-collapse collapse" data-bs-parent="#accordionFaq" style="border-top: 1px solid #e2e8f0;">
+                                    <div class="accordion-body" style="line-height: 1.6; font-size: 1rem; padding: 2rem !important;">
+                                        The module helps organisations efficiently track, manage, and document employee disciplinary actions. It provides a structured workflow for issuing disciplinary notices, collecting employee explanations, and recording final actions to ensure transparency and compliance with HR policies.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" style="margin-bottom: 1rem; overflow: hidden; background-color: white; border: 2px solid #e2e8f0 !important; border-radius: 10px !important;">
+                                <h2 class="accordion-header" style="border-radius: 10px;">
+                                    <a class="accordion-button collapsed" type="button" style="box-shadow: unset; border: none !important; padding: 1.5rem 2rem !important; font-weight: 600 !important; font-size: 1.1rem; color: #00438B !important; background-color: #00438b12 !important; border-radius: 10px !important;" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false">
+                                        What are the different stages in the disciplinary workflow?
+                                    </a>
+                                </h2>
+                                <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFaq" style="border-top: 1px solid #e2e8f0;">
+                                    <div class="accordion-body" style="line-height: 1.6; font-size: 1rem; padding: 2rem !important;">
+                                        The workflow has five stages: <b>Draft</b> (record created), <b>Waiting Explanation</b> (employee notified), <b>Waiting Action</b> (explanation submitted, awaiting manager decision), <b>Action Validated</b> (final action taken), and <b>Cancelled</b> (record cancelled). HR managers can also reset cancelled records back to Draft.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" style="margin-bottom: 1rem; overflow: hidden; background-color: white; border: 2px solid #e2e8f0 !important; border-radius: 10px !important;">
+                                <h2 class="accordion-header" style="border-radius: 10px;">
+                                    <a class="accordion-button collapsed" type="button" style="box-shadow: unset; border: none !important; padding: 1.5rem 2rem !important; font-weight: 600 !important; font-size: 1.1rem; color: #00438B !important; background-color: #00438b12 !important; border-radius: 10px !important;" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false">
+                                        Can the module be customized to fit specific organisational policies?
+                                    </a>
+                                </h2>
+                                <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#accordionFaq" style="border-top: 1px solid #e2e8f0;">
+                                    <div class="accordion-body" style="line-height: 1.6; font-size: 1rem; padding: 2rem !important;">
+                                        Yes, the module is highly customisable. You can configure disciplinary reason categories and action categories to match your organisation's policies. The role-based access ensures only HR managers can validate or cancel actions.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" style="margin-bottom: 1rem; overflow: hidden; background-color: white; border: 2px solid #e2e8f0 !important; border-radius: 10px !important;">
+                                <h2 class="accordion-header" style="border-radius: 10px;">
+                                    <a class="accordion-button collapsed" type="button" style="box-shadow: unset; border: none !important; padding: 1.5rem 2rem !important; font-weight: 600 !important; font-size: 1.1rem; color: #00438B !important; background-color: #00438b12 !important; border-radius: 10px !important;" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false">
+                                        How can I see all disciplinary records for a specific employee?
+                                    </a>
+                                </h2>
+                                <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#accordionFaq" style="border-top: 1px solid #e2e8f0;">
+                                    <div class="accordion-body" style="line-height: 1.6; font-size: 1rem; padding: 2rem !important;">
+                                        Open any employee's form view. A smart button labelled "Disciplinary Action" displays the total count of validated actions for that employee. Clicking it filters and shows all related disciplinary records directly.
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LATEST RELEASE TAB -->
+                <div class="tab-pane fade" id="latest-release" role="tabpanel">
+                    <div class="p-3 py-md-5">
+                        <h2 class="mainhead text-center mb-4" style="font-size: 2rem; font-weight: 700; color: black;">Latest <span>Releases</span></h2>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="h-100" style="position: relative; padding: 30px; border: 2px solid #00438b24; border-radius: 15px;">
+                                    <div class="d-flex align-items-center flex-wrap gap-3" style="margin-bottom: 0.75rem;">
+                                        <div style="font-size: 1.25rem; font-weight: 700; color: #1a202c;">Latest Release 19.0.1.0.0</div>
+                                        <div style="padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; background-color: #9ae6b4; color: #2d7d32; border: 2px solid #68d391;">Add</div>
+                                        <div style="color: #64748b; font-size: 0.875rem; font-weight: 500;">
+                                            <i class="fa fa-calendar me-1"></i> 10 May, 2026
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; background-color: #f5f5f5e7; border-radius: 10px; padding: 12px; text-align: left;">
+                                        <div style="color: #6b7280; line-height: 1.6; font-size: 0.95rem;">Initial Commit for Enterprise Open HRMS Disciplinary Tracking</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- OUR SERVICES -->
+    <div class="container-fluid cmpad py-2 py-md-5">
+        <div class="highlights-section">
+            <h2 class="mainhead text-center" style="font-size: 2rem; font-weight: 700; color: black;">Our <span>Services</span></h2>
+            <div class="row" style="margin-top: 20px;">
+
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1f; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-cog" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Customization</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1f; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-wrench" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Implementation</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1f; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-life-ring" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Support</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1f; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-exchange-alt" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Migration</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1f; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-puzzle-piece" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Integration</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1f; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-comments" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Consultancy</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1f; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-certificate" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Licensing</h3>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1f; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-users" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Hire Odoo Developer</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

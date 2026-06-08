@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  tree view of hr leave-->
+    <record id="hr_leave_view_tree" model="ir.ui.view">
+        <field name="name">hr.leave.view.tree.inherit.ent.hrms.dashboard</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="default_order">duration_display</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

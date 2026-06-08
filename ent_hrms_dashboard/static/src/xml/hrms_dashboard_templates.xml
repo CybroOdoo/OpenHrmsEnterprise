@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+<!--    Displaying Employee Details-->
+    <t t-name="HrDashboardMain">
+        <div class="oh_dashboard" style="display:flex;height:100%">
+            <div style="background-color:#7475c4;width:15%;height:100%"
+                 id="employee-section-resize">
+                <div class="employee-section-resize"
+                     style="color: white;text-align: right;">
+                    <span style="margin-right: 7px;" id="enlarge-icon"
+                          t-on-click="ResizeEmployeeDetailsSection">X</span>
+                </div>
+                <div class="oh-employee-avatar">
+                    <img class="align-self-center mr-3" alt=""
+                         t-att-src="'data:image/png;base64,'+this.state.login_employee['image_1920']"
+                         style="width: 100%;"/>
+                </div>
+                <div class="employee-name-block" id="employee-name">
+                    <h2 class="text-light display-6"><t t-esc="this.state.login_employee['name']"/> </h2>
+                    <t t-if="this.state.login_employee['job_id']">
+                        <p class="text-light"><t t-esc="this.state.login_employee['job_id'][1]"/></p>
+                    </t>
+                    <t t-if="!this.state.login_employee['job_id']">
+                        <p style="color:rgba(255,255,255,0.35) !important;font-style:italic;">Add job title</p>
+                    </t>
+                </div>
+                <div class="employee-details" id="employee-details">
+                    <!-- Gender + DOB row -->
+                    <div class="employee-gender-age">
+                        <div class="employee-gender">
+                            <div class="emp-info-card">
+                                <i class="fa fa-venus-mars emp-info-icon"/>
+                                <p class="emp-info-label">Gender</p>
+                                <t t-set="sex" t-value="this.state.login_employee.sex"/>
+                                    <t t-if="sex == 'male'">
+                                        <p class="emp-info-value"><i class="fa fa-mars"/> Male</p>
+                                    </t>
+                                    <t t-elif="sex == 'female'">
+                                        <p class="emp-info-value"><i class="fa fa-venus"/> Female</p>
+                                    </t>
+                                    <t t-elif="sex == 'other'">
+                                        <p class="emp-info-value">Other</p>
+                                    </t>
+                                    <t t-else="">
+                                        <p class="emp-info-value empty-val">- - -</p>
+                                    </t>
+                            </div>
+                        </div>
+                        <div class="employee-age">
+                            <div class="emp-info-card">
+                                <i class="fa fa-calendar emp-info-icon"/>
+                                <p class="emp-info-label">DOB</p>
+                                <t t-if="this.state.login_employee['birthday']">
+                                    <p class="emp-info-value"><t t-esc="this.state.login_employee['birthday']"/></p>
+                                </t>
+                                <t t-if="!this.state.login_employee['birthday']">
+                                    <p class="emp-info-value empty-val">--/--/----</p>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Joined Date -->
+                    <div class="employee-experience">
+                        <div class="emp-info-card full-width">
+                            <i class="fa fa-briefcase emp-info-icon"/>
+                            <p class="emp-info-label">Joined Date</p>
+                            <t t-if="this.state.login_employee['joining_date']">
+                                <p class="emp-info-value"><t t-esc="this.state.login_employee['joining_date']"/></p>
+                            </t>
+                            <t t-if="!this.state.login_employee['joining_date']">
+                                <p class="emp-info-value empty-val">--/--/----</p>
+                            </t>
+                        </div>
+                    </div>
+                    <!-- Nationality + Mobile row -->
+                    <div class="employee-country-mobile">
+                        <div class="employee-country">
+                            <div class="emp-info-card">
+                                <i class="fa fa-globe emp-info-icon"/>
+                                <p class="emp-info-label">Nationality</p>
+                                <t t-if="this.state.login_employee['country_id']">
+                                    <p class="emp-info-value"><t t-esc="this.state.login_employee['country_id'][1]"/></p>
+                                </t>
+                                <t t-if="!this.state.login_employee['country_id']">
+                                    <p class="emp-info-value empty-val">- - -</p>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="employee-mobile">
+                            <div class="emp-info-card">
+                                <i class="fa fa-phone emp-info-icon"/>
+                                <p class="emp-info-label">Mobile</p>
+                                <t t-if="this.state.login_employee['private_phone']">
+                                    <p class="emp-info-value"><t t-esc="this.state.login_employee['private_phone']"/></p>
+                                </t>
+                                <t t-if="!this.state.login_employee['private_phone']">
+                                    <p class="emp-info-value empty-val">- - -</p>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:#dddded;width:85%;height:100%"
+                 id="employee-data-section-resize">
+                <section class="section">
+                    <div style="display:flex;width:100%;height:23%;">
+                        <div class="click-tile payslip" t-on-click="hr_payslip">
+                            <div class="tile-icon">
+                                <div class="stat-icon"><i class="fa fa-money fa-4x"/></div>
+                            </div>
+                            <div class="tile-details">
+                                <div>
+                                    <h3>Payslips</h3>
+                                    <span><t t-esc="this.state.login_employee['payslip_count']"/></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="click-tile timesheet"
+                             t-on-click="hr_timesheets">
+                            <div class="tile-icon">
+                                <div class="stat-icon"><i class="fa fa-clock-o fa-4x"/></div>
+                            </div>
+                            <div class="tile-details">
+                                <div>
+                                    <h3>Timesheets</h3>
+                                    <span><t t-esc="this.state.login_employee['emp_timesheets']"/></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="click-tile contracts"
+                             t-on-click="hr_contract">
+                            <div class="tile-icon">
+                                <div class="stat-icon"><i class="fa fa-book fa-4x"/></div>
+                            </div>
+                            <div class="tile-details">
+                                <div>
+                                    <h3>Contracts</h3>
+                                    <span><t t-esc="this.state.login_employee['contracts_count']"/></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="click-tile broad-factor"
+                             t-on-click="employee_broad_factor">
+                            <div class="tile-icon">
+                                <div class="stat-icon"><i class="fa fa-bar-chart fa-4x"/></div>
+                            </div>
+                            <div class="tile-details">
+                                <div>
+                                    <h3>Broad Factor</h3>
+                                    <span><t t-esc="this.state.login_employee['broad_factor']"/></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="click-tile check-in-out"
+                             t-on-click="attendance_sign_in_out">
+                            <div class="tile-icon">
+                                <div class="stat-icon"><i class="fa fa-sign-in fa-4x"/></div>
+                            </div>
+                            <div class="tile-details">
+                                <t t-if="this.state.login_employee['attendance_state'] =='checked_out'">
+                                    <div>
+                                        <h3>Check In</h3>
+                                    </div>
+                                </t>
+                                <t t-if="this.state.login_employee['attendance_state'] =='checked_in'">
+                                    <div>
+                                        <h3>Check Out</h3>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="department-leave-job-application">
+                        <div class="leave-job-application">
+                            <div class="leave-requests-status">
+                                <div class="leave-requests leave-job-allocation-click-tile"
+                                     t-on-click="leaves_to_approve">
+                                    <h3>Leave Requests</h3>
+                                    <h2 class="stat-count"><t t-esc="this.state.login_employee.leaves_to_approve"/></h2>
+                                </div>
+                                <div class="leave-today-month">
+                                    <div class="leave-today leave-job-allocation-click-tile"
+                                         t-on-click="leaves_request_today">
+                                        <h3>Today</h3>
+                                        <h2 class="stat-count"><t t-esc="this.state.login_employee.leaves_today"/></h2>
+                                    </div>
+                                    <div class="leave-month leave-job-allocation-click-tile"
+                                         t-on-click="leaves_request_month">
+                                        <h3>This Month</h3>
+                                        <h2 class="stat-count"><t t-esc="this.state.login_employee.leaves_this_month"/></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="leave-allocation leave-job-allocation-click-tile"
+                                 t-on-click="leave_allocations_to_approve">
+                                <h3>Leave Allocation Requests</h3>
+                                <h2 class="stat-count"><t t-esc="this.state.login_employee.leaves_alloc_req"/></h2>
+                            </div>
+                            <div class="job-applications leave-job-allocation-click-tile"
+                                 t-on-click="job_applications_to_approve">
+                                <h3>Job Applications</h3>
+                                <h2 class="stat-count"><t t-esc="this.state.login_employee.job_applications"/></h2>
+                            </div>
+                        </div>
+
+                        <div class="departments">
+                            <div class="departments-main" id="abc">
+                                <h3 class="div-header">Departments</h3>
+                                <div class="emp_graph" t-ref="emp_graph"
+                                     style="height: 129%;width:90%;padding:2%;">
+                                    <canvas id="employeePieChart"
+                                            style="margin-top: -109px; margin-left: 160px; height: 502px; width: 502px;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="monthly-leave-analysis-main">
+                        <div class="monthly-leave-analysis">
+                            <h3 class="div-header">Monthly Leave Analysis</h3>
+                            <div class="leave_graph d-flex"
+                                 t-ref="leave_graph">
+                                <div id="leave_bar" class="bar_chart" style="width:70%">
+                                    <canvas id="leave_barChart" style="margin-left: 40px;"/>
+                                </div>
+                                <div id="leave_doughnut" class="doughnut_chart" style="width: 26%">
+                                    <canvas id="leave_doughnutChart"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="join-resign-attrition">
+                        <div class="join-resign-analysis">
+                            <h3 class="div-header">Monthly Join/Resign Analysis</h3>
+                            <div class="join_resign_trend"
+                                 t-ref="join_resign_trend">
+                                <canvas id="lineChart"
+                                        style="width: 85%;margin-left:3%;"/>
+                            </div>
+                        </div>
+                        <div class="attrition-rate">
+                            <h3 class="div-header">Attrition Rate</h3>
+                            <div class="attrition_rate" t-ref="attrition_rate">
+                                <canvas id="attritionRateChart"
+                                        style="margin-left: 5%; width:85%;"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="birthday-event-announcement-main">
+                        <div class="upcoming-birthdays birthday-event-announcement">
+                            <div class="upcoming-birthdays-events-header-div">
+                                <h3 class="upcoming-birthdays-events-header">Upcoming Birthdays</h3>
+                            </div>
+                            <div class="hr_notification">
+                                <div class="col-xs-12 text-align">
+                                    <t t-if="this.state.employee_birthday">
+                                        <t t-foreach="this.state.employee_birthday"
+                                           t-as="employee" t-key="employee['id']">
+                                            <div class="col-sm-12 col-lg-12 birth_emp"
+                                                 t-att-style="employee['is_birthday'] ? 'background: #E6E6FA;' : ''">
+                                                <div class="text-color">
+                                                    <div class="">
+                                                        <div class="media">
+                                                            <a href="#"
+                                                               style="float: left;padding-right: 6%; pointer-events: none; cursor: default;padding-left:6%">
+                                                                <img class="align-self-center birth_img"
+                                                                     alt=""
+                                                                     t-attf-src="/web/image?model=hr.employee&amp;id={{employee['id']}}&amp;field=image_1920"/>
+                                                            </a>
+                                                            <div class="media-body employee_name">
+                                                                <h2 class="text-color display-6"
+                                                                    t-att-style="employee['is_birthday'] ? 'color: black; font-weight:500' : ''">
+                                                                    <t t-esc="employee['name']"/>
+                                                                </h2>
+                                                                <p t-att-style="employee['is_birthday'] ? 'color: black; font-weight:500' : ''"><t t-esc="employee['birthday']"/></p>
+                                                                <t t-if="employee['is_birthday']">
+                                                                    <span class="birthday">Happy Birthday..!! </span>
+                                                                    <span>🎁</span>
+                                                                </t>
+                                                                <t t-if="employee['days']">
+                                                                    <span class="days_left"> <t
+                                                                            t-esc="employee['days']"/>
+                                                                        Days Left</span>
+                                                                </t>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="upcoming-events birthday-event-announcement">
+                            <div class="upcoming-birthdays-events-header-div">
+                                <h3 class="upcoming-birthdays-events-header">Upcoming Events</h3>
+                            </div>
+                            <div class="col-xs-12 text-align">
+                                <t t-foreach="this.state.upcoming_events" t-as="event"
+                                   t-key="event">
+                                    <div class="col-sm-12 col-lg-12 border-bottom"
+                                         style="padding:0;">
+                                        <div class="text-color">
+                                            <div class="">
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <p class="mb-0"><b>Date :</b>
+                                                            <t t-esc="event[2]"/>
+                                                            -
+                                                            <t t-esc="event[3]"/>
+                                                        </p>
+                                                        <t t-if="event[3]">
+                                                            <p><b>Venue :</b>
+                                                                <t t-esc="event[4] "/></p>
+                                                        </t>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="upcoming-announcements birthday-event-announcement">
+                            <div class="upcoming-birthdays-events-header-div">
+                                <h3 class="upcoming-birthdays-events-header">Announcements</h3>
+                            </div>
+                            <div class="col-xs-12 text-align">
+                                <t t-foreach="this.state.announcements"
+                                   t-as="announcement" t-key="announcement">
+                                    <div class="col-sm-12 col-lg-12" style="padding:0;">
+                                        <div class="text-color">
+                                            <div class="">
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <h2 class="text-color display-6"
+                                                            style="font-size: 15px;"><t t-esc="announcement['announcement_reason']"/> </h2>
+                                                        <p class="mb-0">Date : <t
+                                                                t-esc="announcement['date_start']"/>
+                                                            to
+                                                            <t t-esc="announcement['date_end']"/>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-leave-analysis-main">
+                        <div class="my-leave-analysis" style="margin-top: 4%; !important;">
+                            <h3 class="div-header">My Leave Analysis</h3>
+                                <div class="leave_trend" t-ref="leave_trend" style="display: ruby-text;">
+                                    <canvas id="leaveTrendChart" style="height: 270px;"/>
+                                </div>
+                        </div>
+                        <div class="my-leave-analysis" style="margin-top: 4%; !important;">
+                            <h3 class="div-header">My Skill Analysis</h3>
+                            <div class="skill">
+                                <canvas id="skillChart" style="height: 275px;"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+</templates>

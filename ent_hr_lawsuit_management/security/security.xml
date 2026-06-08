@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--Module security category for lawsuit-->
+    <record id="module_lawsuit_category" model="ir.module.category">
+        <field name="name">Lawsuit Management</field>
+        <field name="sequence">18</field>
+    </record>
+    <!--Manager user group for lawsuit-->
+    <record id="ent_hr_lawsuit_management_group_manager" model="res.groups">
+        <field name="name">Manager Law</field>
+    </record>
+    <!--Normal user group for lawsuit-->
+    <record id="ent_hr_lawsuit_management_group_user" model="res.groups">
+        <field name="name">User Law</field>
+    </record>
+    <!--Rule for the normal user to see the records in the hr.lawsuit-->
+    <record id="hr_lawsuit_rule_user" model="ir.rule">
+        <field name="name">User can only see their own records</field>
+        <field name="model_id" ref="model_hr_lawsuit"/>
+        <field name="groups"
+               eval="[(4, ref('ent_hr_lawsuit_management.ent_hr_lawsuit_management_group_user'))]"/>
+        <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+    </record>
+    <!--Rule for the manager user to see the records in the hr.lawsuit-->
+    <record id="hr_lawsuit_rule_manager" model="ir.rule">
+        <field name="name">Manager can see all records</field>
+        <field name="model_id" ref="model_hr_lawsuit"/>
+        <field name="groups"
+               eval="[(4, ref('ent_hr_lawsuit_management.ent_hr_lawsuit_management_group_manager'))]"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+    </record>
+</odoo>

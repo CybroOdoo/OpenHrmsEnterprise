@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_disciplinary_action" model="ir.sequence">
+            <field name="name">Disciplinary Action</field>
+            <field name="code">disciplinary.action_id</field>
+            <field name="prefix">DA/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

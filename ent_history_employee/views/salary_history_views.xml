@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- List view for Salary history-->
+    <record id="salary_history_view_list" model="ir.ui.view">
+        <field name="name">salary.history.view.list</field>
+        <field name="model">salary.history</field>
+        <field name="arch" type="xml">
+            <list string="salary_history" create="0" import="false">
+                <field name="employee_id" column_invisible="True"/>
+                <field name="employee_name" column_invisible="True"/>
+                <field name="updated_date"/>
+                <field name="current_value"/>
+            </list>
+        </field>
+    </record>
+</odoo>

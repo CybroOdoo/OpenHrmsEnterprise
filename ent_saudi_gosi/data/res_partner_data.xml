@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--Data in the model res.partner-->
+        <record id="contribution_register_gosi" model="res.partner">
+            <field name="name">GOSI Contribution For Saudi Employee</field>
+        </record>
+        <record id="contribution_register_gosicompany" model="res.partner">
+            <field name="name">GOSI Company Contribution For Saudi Employee
+            </field>
+        </record>
+    </data>
+</odoo>

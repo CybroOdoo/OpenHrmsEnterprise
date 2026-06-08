@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Record in the model hr.salary.rule.category-->
+        <record id="GOSI" model="hr.salary.rule.category">
+            <field name="name">GOSI</field>
+            <field name="code">GOSI</field>
+        </record>
+    </data>
+</odoo>

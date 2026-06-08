@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Hr employee inherited form view-->
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="name">hr.employees.view.form.inherit.ent.saudi.gosi</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <!-- Add age and eligibility after Birthday row -->
+            <xpath expr="//field[@name='is_non_resident']" position="after">
+                <field name="age" readonly="1"/>
+                <field name="limit" readonly="1"/>
+            </xpath>
+            <!-- Add GOSI Information tab after hr_settings tab -->
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page name="gosi_info" string="GOSI Information"
+                      groups="hr.group_hr_user">
+                    <group col="4" colspan="4">
+                        <field name="type"/>
+                        <field name="gosi_number"/>
+                        <field name="issue_date"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

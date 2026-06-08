@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--    Inheriting res config settings form view-->
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">
+            res.config.settings.view.form.inherit.ent.hr.employee.updation
+        </field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90"/>
+        <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='work_organization_setting_container']" position="after">
+                <block title="Notice Period" name="notice_period_setting_container">
+                    <setting string="Notice Period" id="notice_period_setting"
+                        title="Enable Notice Period for Employees">
+                        <field name="notice_period"/>
+                        <div class="content-group" invisible="not notice_period">
+                            <div class="mt16">
+                                <field name="no_of_days" class="oe_inline" style="width:50px;"/>
+                                <span>days</span>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_department_history_user,access.department.history.user,model_department_history,base.group_user,1,0,0,0
+access_salary_history_user,access.salary.history.user,model_salary_history,base.group_user,1,0,0,0
+access_timesheet_cost_user,access.timesheet.cost.user,model_timesheet_cost,base.group_user,1,0,0,0
+access_contract_history_user,access.contract.history.user,model_contract_history,base.group_user,1,0,0,0
+access_department_history_manager,access.department.history.manager,model_department_history,hr.group_hr_manager,1,1,1,1
+access_salary_history_manager,access.salary.history.manager,model_salary_history,hr.group_hr_manager,1,1,1,1
+access_contract_history_manager,access.contract.history.manager,model_contract_history,hr.group_hr_manager,1,1,1,1

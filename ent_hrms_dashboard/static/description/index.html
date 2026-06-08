@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enterprise Open HRMS - HR Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body style="font-family: 'Montserrat', sans-serif; background-color: #00438b08;">
+
+    <!-- HEADER -->
+    <div class="container-fluid" style="padding: 0 40px;">
+        <div class="supports my-3 py-3" style="border: 2px solid #e9ecef; padding: 0 35px; border-radius: 10px; background-color: white;">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-3">
+                    <div class="my-3 mx-auto mx-sm-0" style="width: 250px;">
+                        <img src="./assets/icons/cybro-logo.png" style="width: 100%;">
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="my-3 d-flex align-items-center justify-content-center justify-content-sm-end">
+                            <span class="me-3"><b>Supports: </b></span>
+                            <div class="text-center" style="background-color: #875A7B !important; font-size: 1rem !important; color: #fff !important; font-weight: 500 !important; padding: 8px !important; margin: 0 3px !important; border-radius: 50px !important; min-width: 130px !important;">
+                                Enterprise
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 10px; display: flex; justify-content: end; float: right;">
+                        <div class="d-flex align-items-center justify-content-end flex-wrap gap-2">
+                            <span class="me-3"><b>Availability: </b></span>
+                            <div class="d-flex align-items-center justify-content-center gap-2 text-center col" style="border: 2px solid #ebebeb; font-size: 1rem !important; color: #333 !important; font-weight: 500 !important; padding: 8px !important; margin: 0 3px !important; border-radius: 20px !important; min-width: 150px !important;">
+                                <i class="fa fa-check-circle text-success"></i>
+                                Odoo.sh
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="container-fluid text-center py-5 py-md-3" style="padding: 0 40px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-center gap-3 mb-3">
+                    <img src="./assets/icons/cybro-logo.png" height="50px" style="object-fit: contain;">
+                    <img src="./assets/icons/logo-openhrms.png" height="50px" style="object-fit: contain;">
+                </div>
+                <h3 class="mainhead" style="font-size: 2.3rem; padding-top: 1rem; font-weight: 700; color: black;">
+                    Enterprise Open HRMS - HR Dashboard</h3>
+                <p class="para mb-4" style="font-size: 20px; color: #6b7280;">
+                    A visually engaging HR Dashboard providing real-time insights on employees, leaves, timesheets, recruitments, join/resign trends, department analytics, and more — all in one place.</p>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <a href="mailto:odoo@cybrosys.com"
+                        class="d-flex align-items-center gap-2 justify-content-center"
+                        style="position: relative; padding: 15px 25px; border: none; border-radius: 50px; font-size: 16px; font-weight: 600; text-decoration: none; color: white; cursor: pointer; min-width: 200px; background-color: #00438B;">
+                        <i class="fa fa-envelope"></i>
+                        <span style="font-size: 15px; letter-spacing: 0.5px;">Email Us</span>
+                    </a>
+                    <a href="skype:cybroopenerp?chat"
+                        class="d-flex align-items-center gap-2 justify-content-center"
+                        style="position: relative; padding: 15px 25px; border: none; border-radius: 50px; font-size: 16px; font-weight: 600; text-decoration: none; color: white; cursor: pointer; min-width: 200px; background-color: #00aff0;">
+                        <i class="fa-brands fa-skype"></i>
+                        <span style="font-size: 15px; letter-spacing: 0.5px;">Skype Us</span>
+                    </a>
+                    <a href="https://wa.me/919074270811" target="_blank"
+                        class="d-flex align-items-center gap-2 justify-content-center"
+                        style="position: relative; padding: 15px 25px; border: none; border-radius: 50px; font-size: 16px; font-weight: 600; text-decoration: none; color: white; cursor: pointer; min-width: 200px; background-color: #25d366;">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span style="font-size: 15px; letter-spacing: 0.5px;">+91 9074270811</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- KEY HIGHLIGHTS -->
+    <div class="container-fluid py-2 py-md-5" style="padding: 0 40px;">
+        <div class="highlights-section">
+            <h2 class="text-center" style="font-size: 2rem; font-weight: 700; color: black;">Key <span style="color: #00438B;">Highlights</span></h2>
+            <div class="row" style="margin-top: 20px;">
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-gauge-high" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">HR Manager Dashboard</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            A comprehensive dashboard for HR managers with real-time statistics on employees, leaves, timesheets, job applications, and upcoming events.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-user-tie" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Employee Self-Service Dashboard</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            Employees get their own personalized dashboard with quick access to their payslips, timesheets, contracts, leave history, and skill analysis.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-chart-pie" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Department Analytics</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            Visual department-wise employee distribution and leave statistics with interactive charts for quick and actionable understanding.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-arrow-trend-up" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Join / Resign Trends</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            Monthly joining and resignation trend analysis with attrition rate graph — helping HR teams track workforce growth and retention over time.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-calendar-check" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Leave Management Overview</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            View pending leave approvals, today's leave count, monthly leave summary, and allocation requests — all from the dashboard without navigating away.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="h-100" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #00438B;">
+                            <i class="fa fa-cake-candles" style="color: white; font-size: 24px;"></i>
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black; margin-bottom: 12px;">Birthdays, Events & Announcements</h3>
+                        <p style="font-size: 16px; color: #6b7280; margin-bottom: 0; line-height: 1.6;">
+                            Never miss an important date. The dashboard surfaces upcoming employee birthdays, company events, and HR announcements in a single view.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="container-fluid py-2 py-md-5" style="padding: 0 40px;">
+        <div class="tabs-design1">
+            <ul class="nav nav-pills justify-content-start justify-content-md-center pb-4" style="flex-flow: nowrap; overflow: hidden; overflow-x: auto;" id="pills1" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="screenshot-tab" data-bs-toggle="pill" data-bs-target="#screenshot" type="button" role="tab" style="width: max-content; border-radius: 50px; margin: 0 5px; padding: 12px 24px; font-weight: 500; border: 2px solid #e9ecef;">
+                        Screenshots
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="features-tab" data-bs-toggle="pill" data-bs-target="#features" type="button" role="tab" style="width: max-content; border-radius: 50px; margin: 0 5px; padding: 12px 24px; font-weight: 500; border: 2px solid #e9ecef;">
+                        Features
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="faq-tab" data-bs-toggle="pill" data-bs-target="#faq" type="button" role="tab" style="width: max-content; border-radius: 50px; margin: 0 5px; padding: 12px 24px; font-weight: 500; border: 2px solid #e9ecef;">
+                        Frequent Questions
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="latest-release-tab" data-bs-toggle="pill" data-bs-target="#latest-release" type="button" role="tab" style="width: max-content; border-radius: 50px; margin: 0 5px; padding: 12px 24px; font-weight: 500; border: 2px solid #e9ecef;">
+                        Latest Release
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content bg-white rounded-4" style="border: 2px solid #e9ecef; border-radius: 10px;" id="pills1Content">
+
+                <!-- SCREENSHOT TAB -->
+                <div class="tab-pane fade show active" id="screenshot" role="tabpanel">
+                    <div class="p-3 py-md-5">
+
+                        <!-- Screenshot 1 -->
+                        <h2 class="text-center mb-2" style="font-size: 2rem; font-weight: 700; color: black;"><span>HR Manager Dashboard Overview</span></h2>
+                        <div style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            The main HR manager view showing all essential KPIs — total employees, leaves to approve, today's leaves, job applications, timesheet count, and monthly leave summary in a single glance.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/1.png" alt="HR Manager Dashboard Overview" style="max-width: 100%; height: auto;">
+                        </div>
+
+                        <!-- Screenshot 2 -->
+                        <h2 class="text-center mb-2 mt-5" style="font-size: 2rem; font-weight: 700; color: black;"><span>Employee Self-Service Dashboard</span></h2>
+                        <div style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            The employee's personal dashboard showing their profile details, experience duration, age, broad factor, and quick-access buttons for payslips, timesheets, and contracts.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/2.png" alt="Employee Self-Service Dashboard" style="max-width: 100%; height: auto;">
+                        </div>
+
+                        <!-- Screenshot 3 -->
+                        <h2 class="text-center mb-2 mt-5" style="font-size: 2rem; font-weight: 700; color: black;"><span>Department-wise Leave Statistics</span></h2>
+                        <div style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            A bar/line chart showing leave trends broken down by department over the last 6 months — helping managers identify departments with high leave usage.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/3.png" alt="Department-wise Leave Statistics" style="max-width: 100%; height: auto;">
+                        </div>
+
+                        <!-- Screenshot 4 -->
+                        <h2 class="text-center mb-2 mt-5" style="font-size: 2rem; font-weight: 700; color: black;"><span>Join / Resign Trend & Attrition Rate</span></h2>
+                        <div style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            Monthly joining and resignation analysis displayed as a comparative chart alongside an attrition rate graph — key for strategic HR planning and retention tracking.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/4.png" alt="Join Resign Trend and Attrition Rate" style="max-width: 100%; height: auto;">
+                        </div>
+
+                        <!-- Screenshot 5 -->
+                        <h2 class="text-center mb-2 mt-5" style="font-size: 2rem; font-weight: 700; color: black;"><span>Upcoming Birthdays, Events & Announcements</span></h2>
+                        <div style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            The lower section of the manager dashboard listing upcoming employee birthdays, scheduled company events, and HR announcements — so nothing important is missed.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/5.png" alt="Upcoming Birthdays Events and Announcements" style="max-width: 100%; height: auto;">
+                        </div>
+
+                        <!-- Screenshot 6 -->
+                        <h2 class="text-center mb-2 mt-5" style="font-size: 2rem; font-weight: 700; color: black;"><span>Personal Leave Analysis & Skill Analysis</span></h2>
+                        <div style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            The employee dashboard's lower section displaying the employee's personal leave history as a chart, alongside their skill radar/bar chart showing proficiency across registered skills.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/6.png" alt="Personal Leave Analysis and Skill Analysis" style="max-width: 100%; height: auto;">
+                        </div>
+
+                        <!-- Screenshot 7 -->
+                        <h2 class="text-center mb-2 mt-5" style="font-size: 2rem; font-weight: 700; color: black;"><span>Department-wise Employee Distribution</span></h2>
+                        <div style="max-width: 80%; text-align: center; margin: auto; font-size: 18px; margin-bottom: 2rem; color: #6b7280;">
+                            A pie or donut chart showing how employees are distributed across different departments — giving managers a quick snapshot of headcount by department.
+                        </div>
+                        <div style="border-radius: 10px; overflow: hidden; border: 2px solid #e7e7e7;">
+                            <img src="./assets/screenshots/7.png" alt="Department-wise Employee Distribution" style="max-width: 100%; height: auto;">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- FEATURES TAB -->
+                <div class="tab-pane fade" id="features" role="tabpanel">
+                    <div class="p-3 py-md-5">
+                        <h2 class="text-center mb-4" style="font-size: 2rem; font-weight: 700; color: black;">Module <span style="color: #00438B;">Features</span></h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Dedicated HR Manager dashboard with all essential KPIs
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Employee self-service dashboard with personal analytics
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Department-wise employee count with interactive chart
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Department-wise leave statistics for the last 6 months
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Monthly join/resign trend graph with attrition rate analysis
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Quick access to pending leave approvals and allocation requests
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Today's leave count and monthly leave summary at a glance
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Upcoming employee birthdays and company events display
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> HR announcements visible directly from the dashboard
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Employee skill analysis chart per employee on self-service view
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Personal leave history chart on employee dashboard
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Broad factor display for employee leave analysis
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Employee experience duration computed from first contract date
+                            </div>
+                            <div class="col-md-6 mb-3" style="font-size: 16px; color: #6b7280; line-height: 1.8;">
+                                <i class="fa fa-check-circle text-success me-2"></i> Compatible with Odoo 19 Enterprise
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ TAB -->
+                <div class="tab-pane fade" id="faq" role="tabpanel">
+                    <div class="p-3 py-md-5">
+                        <h2 class="text-center mb-4" style="font-size: 2rem; font-weight: 700; color: black;">Frequently Asked <span style="color: #00438B;">Questions</span></h2>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                            <div class="accordion-item" style="margin-bottom: 1rem; overflow: hidden; background-color: white; border: 2px solid #e2e8f0 !important; border-radius: 10px !important;">
+                                <h2 class="accordion-header">
+                                    <a class="accordion-button collapsed" type="button" style="box-shadow: unset; border: none !important; padding: 1.5rem 2rem !important; font-weight: 600 !important; font-size: 1.1rem; color: #00438B !important; background-color: #00438b12 !important; border-radius: 10px !important;" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false">
+                                        Who can see the HR Manager Dashboard vs the Employee Dashboard?
+                                    </a>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="border-top: 1px solid #e2e8f0;">
+                                    <div class="accordion-body" style="line-height: 1.6; font-size: 1rem; padding: 2rem !important;">
+                                        Users with the HR Manager or HR Officer access rights will see the full manager dashboard with all employee KPIs, department analytics, and leave overviews. Regular employees will see the self-service dashboard showing only their own personal data, timesheets, contracts, and skill analysis.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" style="margin-bottom: 1rem; overflow: hidden; background-color: white; border: 2px solid #e2e8f0 !important; border-radius: 10px !important;">
+                                <h2 class="accordion-header">
+                                    <a class="accordion-button collapsed" type="button" style="box-shadow: unset; border: none !important; padding: 1.5rem 2rem !important; font-weight: 600 !important; font-size: 1.1rem; color: #00438B !important; background-color: #00438b12 !important; border-radius: 10px !important;" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false">
+                                        What does the "Broad Factor" represent on the employee dashboard?
+                                    </a>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="border-top: 1px solid #e2e8f0;">
+                                    <div class="accordion-body" style="line-height: 1.6; font-size: 1rem; padding: 2rem !important;">
+                                        The broad factor is a numeric value stored per employee in the hr_employee_broad_factor table. It is used to compute a proportional leave allocation indicator, giving employees and managers a benchmark for leave usage relative to entitlement.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" style="margin-bottom: 1rem; overflow: hidden; background-color: white; border: 2px solid #e2e8f0 !important; border-radius: 10px !important;">
+                                <h2 class="accordion-header">
+                                    <a class="accordion-button collapsed" type="button" style="box-shadow: unset; border: none !important; padding: 1.5rem 2rem !important; font-weight: 600 !important; font-size: 1.1rem; color: #00438B !important; background-color: #00438b12 !important; border-radius: 10px !important;" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false">
+                                        How is "experience" calculated on the employee dashboard?
+                                    </a>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="border-top: 1px solid #e2e8f0;">
+                                    <div class="accordion-body" style="line-height: 1.6; font-size: 1rem; padding: 2rem !important;">
+                                        Experience is calculated as the difference between today's date and the employee's first contract start date (date_start from hr.contract). It is displayed as "X years Y months Z days". If no contract exists for the employee, the field shows empty.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" style="margin-bottom: 1rem; overflow: hidden; background-color: white; border: 2px solid #e2e8f0 !important; border-radius: 10px !important;">
+                                <h2 class="accordion-header">
+                                    <a class="accordion-button collapsed" type="button" style="box-shadow: unset; border: none !important; padding: 1.5rem 2rem !important; font-weight: 600 !important; font-size: 1.1rem; color: #00438B !important; background-color: #00438b12 !important; border-radius: 10px !important;" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false">
+                                        What modules are required to install this dashboard?
+                                    </a>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="border-top: 1px solid #e2e8f0;">
+                                    <div class="accordion-body" style="line-height: 1.6; font-size: 1rem; padding: 2rem !important;">
+                                        This module depends on: hr, hr_holidays, hr_timesheet, hr_payroll, hr_attendance, hr_timesheet_attendance, hr_recruitment, ent_hr_resignation, event, ent_hr_reward_warning, and base. All dependent OpenHRMS enterprise modules must be installed first.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" style="margin-bottom: 1rem; overflow: hidden; background-color: white; border: 2px solid #e2e8f0 !important; border-radius: 10px !important;">
+                                <h2 class="accordion-header">
+                                    <a class="accordion-button collapsed" type="button" style="box-shadow: unset; border: none !important; padding: 1.5rem 2rem !important; font-weight: 600 !important; font-size: 1.1rem; color: #00438B !important; background-color: #00438b12 !important; border-radius: 10px !important;" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false">
+                                        Which Odoo version is this module compatible with?
+                                    </a>
+                                </h2>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="border-top: 1px solid #e2e8f0;">
+                                    <div class="accordion-body" style="line-height: 1.6; font-size: 1rem; padding: 2rem !important;">
+                                        This module is built and tested for Odoo 19 Enterprise. It has been migrated from Odoo 18 with compatibility fixes for removed models (hr.employee.base), deprecated fields (first_contract_date, department_id column), and eliminated external dependencies (pandas).
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LATEST RELEASE TAB -->
+                <div class="tab-pane fade" id="latest-release" role="tabpanel">
+                    <div class="p-3 py-md-5">
+                        <h2 class="text-center mb-4" style="font-size: 2rem; font-weight: 700; color: black;">Latest <span style="color: #00438B;">Releases</span></h2>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="h-100" style="position: relative; padding: 30px; border: 2px solid #00438b24; border-radius: 15px;">
+                                    <div class="d-flex align-items-center flex-wrap gap-3" style="margin-bottom: 0.75rem;">
+                                        <div style="font-size: 1.25rem; font-weight: 700; color: #1a202c;">Latest Release 19.0.1.0.0</div>
+                                        <div style="padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; background-color: #9ae6b4; color: #2d7d32; border: 2px solid #68d391;">Add</div>
+                                        <div style="color: #64748b; font-size: 0.875rem; font-weight: 500;">
+                                            <i class="fa fa-calendar me-1"></i>
+                                            10th May, 2026
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="p-3" style="display: flex; align-items: center; background-color: #f5f5f5e7; border-radius: 10px; text-align: left;">
+                                            <div style="color: #6b7280; line-height: 1.6; font-size: 0.95rem;">Initial commit for Enterprise Open HRMS - HR Dashboard - Odoo 19 migration</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- OUR SERVICES -->
+    <div class="container-fluid py-2 py-md-5" style="padding: 0 40px;">
+        <div>
+            <h2 class="text-center" style="font-size: 2rem; font-weight: 700; color: black;">Our <span style="color: #00438B;">Services</span></h2>
+            <div class="row mt-4">
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #FA5A7D;">
+                            <img src="./assets/icons/gear.svg" height="28px" width="28px">
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Customization</h3>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #FF947A;">
+                            <img src="./assets/icons/wrench-icon.svg" height="28px" width="28px">
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Implementation</h3>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #3CD856;">
+                            <img src="./assets/icons/life-ring-icon.svg" height="28px" width="28px">
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Support</h3>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #BF83FF;">
+                            <img src="./assets/icons/arrows-repeat.svg" height="28px" width="28px">
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Migration</h3>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #01649C;">
+                            <img src="./assets/icons/puzzle-piece-icon.svg" height="28px" width="28px">
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Integration</h3>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #69CC70;">
+                            <img src="./assets/icons/odoo-consultancy.svg" height="28px" width="28px">
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Consultancy</h3>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #2E4556;">
+                            <img src="./assets/icons/odoo-licencing.svg" height="28px" width="28px">
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Odoo Licensing</h3>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center" style="background-color: #00438b1a; border-radius: 10px; padding: 32px; border: 2px solid #00438b1a;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 24px; background-color: #FCD12C;">
+                            <img src="./assets/icons/hire-odoo.svg" height="28px" width="28px">
+                        </div>
+                        <h3 style="font-size: 20px; font-weight: 600; color: black;">Hire Odoo Developer</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
