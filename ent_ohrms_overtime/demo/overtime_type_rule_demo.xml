@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--        Overtime Type Rule Demo-->
+        <record id="overtime_type_rule_demo" model="overtime.type.rule">
+            <field name="type_line_id" ref="overtime_type_cash_hour"/>
+            <field name="name">First Category</field>
+            <field name="from_hrs" eval="0"/>
+            <field name="to_hrs" eval="5"/>
+            <field name="hrs_amount" eval="2.0"/>
+        </record>
+    </data>
+</odoo>

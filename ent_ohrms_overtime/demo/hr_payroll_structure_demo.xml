@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--    Salary Structure  demo-->
+        <record id="hr_payroll_salary_structure_overtime" model="hr.payroll.structure">
+            <field name="name">Regular Pay with OverTime</field>
+            <field name="country_id" eval="False"/>
+            <field name="type_id" ref="hr_payroll_structure_type_overtime"/>
+            <field eval="[(4, ref('hr_payslip_input_type_overtime'))]" name="input_line_type_ids"/>
+        </record>
+    </data>
+</odoo>
