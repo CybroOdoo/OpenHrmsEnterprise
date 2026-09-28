@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--Inherited form view of the model hr.leave.type-->
+    <record id="edit_holiday_status_form" model="ir.ui.view">
+        <field name="name">
+            hr.leave.type.view.form.inherit.ent.hr.holiday.approval
+        </field>
+        <field name="model">hr.leave.type</field>
+        <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='leave_validation_type']/../.." position="after">
+                <notebook invisible="leave_validation_type != 'multi'">
+                    <page string="Leave validation">
+                        <field name="leave_validators_ids" mode="list">
+                            <list string="Users" editable="bottom">
+                                <field name="holiday_validators_id"/>
+                            </list>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+</odoo>

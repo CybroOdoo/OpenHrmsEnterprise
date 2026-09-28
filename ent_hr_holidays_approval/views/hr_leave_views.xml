@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Inherited form view of the model hr.leave-->
+    <record id="hr_leave_view_form" model="ir.ui.view">
+        <field name="name">hr.leave.view.form.inherit.ent.hr.holidays.approval
+        </field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="is_multi_level_validation" invisible="1"/>
+                <field name="is_button_visibility" invisible="1"/>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <notebook invisible="is_multi_level_validation != True">
+                    <page string="Validation Status">
+                        <field name="leave_approvals_ids" mode="list">
+                            <list string="Users" create="false" delete="false">
+                                <field name="validating_users_id"/>
+                                <field name="is_validation_status"/>
+                                <field name="leave_comments"/>
+                            </list>
+                            <form>
+                                <group>
+                                    <field name="validating_users_id"/>
+                                    <field name="leave_comments"/>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+            <xpath expr="//button[@name='action_approve'][1]"
+                   position='attributes'>
+                <attribute name="invisible">is_button_visibility != False</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_approve'][2]"
+                   position='attributes'>
+                <attribute name="invisible">is_multi_level_validation == True</attribute>
+            </xpath>
+        </field>
+    </record>
+    <!--Menuitem for the model hr.leave to get the leave requests to approve-->
+    <menuitem
+            id="hr_leave_menu_open_leave_approvals"
+            name="Approval Requests"
+            parent="hr_holidays.menu_hr_holidays_management"
+            action="ent_hr_holidays_approval.hr_leave_action"
+            sequence="1"/>
+</odoo>
